@@ -1,0 +1,20 @@
+{
+  "name": "bradyohalloran-dot-com",
+  "version": "1.0.0",
+  "homepage": "https://github.com/bradyohalloran/bradyohalloran-dot-com",
+  "description": "My personal site.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "bootstrap-sass": "~3.3.3",
+    "modernizr": "~2.8.3"
+  }
+}
