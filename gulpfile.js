@@ -8,6 +8,7 @@ var slim = require('gulp-slim');
 var minifyCSS = require('gulp-minify-css');
 var connect = require('gulp-connect');
 var del = require('del');
+var plumber = require('gulp-plumber');
 
 var livereload = require('gulp-livereload');
 
@@ -15,6 +16,7 @@ gulp.task('default', ['connect', 'watch']);
 
 gulp.task('sass', ['clean'], function() {
 	gulp.src('src/sass/main.sass')
+		.pipe(plumber())
 		.pipe(sass({indentedSyntax: true}))
 		.pipe(sourcemaps.write())
 		.pipe(minifyCSS({keepBreaks:true}))
