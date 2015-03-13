@@ -9,6 +9,7 @@ var minifyCSS = require('gulp-minify-css');
 var connect = require('gulp-connect');
 var del = require('del');
 var plumber = require('gulp-plumber');
+var jade = require('gulp-jade');
 
 var livereload = require('gulp-livereload');
 
@@ -31,9 +32,10 @@ gulp.task('js', ['clean'], function() {
 		.pipe(gulp.dest('build/js'))
 });
 
-gulp.task('slim', ['clean'], function() {
-	gulp.src('src/slim/*.slim')
-		.pipe(slim({
+gulp.task('templates', ['clean'], function() {
+	gulp.src('src/jade/*.jade')
+		.pipe(plumber())
+		.pipe(jade({
 			pretty: true
 		}))
 		.pipe(gulp.dest("build/"))
@@ -56,7 +58,7 @@ gulp.task('clean', function() {
 	del('build/**/*.*');
 })
 
-gulp.task('build', ['slim', 'sass', 'js']);
+gulp.task('build', ['templates', 'sass', 'js']);
 
 
 
