@@ -10,30 +10,44 @@ var connect = require('gulp-connect');
 var del = require('del');
 var plumber = require('gulp-plumber');
 var jade = require('gulp-jade');
-
+var coffee = require('gulp-coffee');
+var runSequence = require('run-sequence');
 var livereload = require('gulp-livereload');
 
 gulp.task('default', ['connect', 'watch']);
 
-gulp.task('sass', ['clean'], function() {
-	gulp.src('src/sass/main.sass')
+// BUILD SCRIPTS
+
+gulp.task('build-css', function() {
+	return gulp.src('src/sass/main.sass')
 		.pipe(plumber())
 		.pipe(sass({indentedSyntax: true}))
 		.pipe(sourcemaps.write())
 		.pipe(minifyCSS({keepBreaks:true}))
-		.pipe(gulp.dest('./build/css'));
+		.pipe(gulp.dest('./build/css'))
+		.pipe(connect.reload())
 });
 
-gulp.task('js', ['clean'], function() {
-	gulp.src(['lib/modernizr/modernizr.js', 'lib/jquery/dist/jquery.min.js'])
-		.pipe(concat('main.js'))
-		.pipe(uglify())
-		.pipe(sourcemaps.write())
+gulp.task('build-js', function() {
+
+	return gulp.src(['src/coffee/*.coffee'])
+		.pipe(coffee({bare:true}))
 		.pipe(gulp.dest('build/js'))
+
 });
 
-gulp.task('templates', ['clean'], function() {
-	gulp.src('src/jade/*.jade')
+gulp.task('build-libs', function() {
+	return gulp.src([
+		'lib/modernizr/modernizr.js', 
+		'lib/jquery/dist/jquery.min.js'
+		])
+	.pipe(concat('libs.js'))
+	//.pipe(uglify({mangle:false}))
+	.pipe(gulp.dest('build/js'))
+})
+
+gulp.task('build-html', function() {
+	return gulp.src('src/jade/*.jade')
 		.pipe(plumber())
 		.pipe(jade({
 			pretty: true
@@ -41,6 +55,8 @@ gulp.task('templates', ['clean'], function() {
 		.pipe(gulp.dest("build/"))
 		.pipe(connect.reload())
 });
+
+// UTILITY TASKS
 
 gulp.task('watch', function() {
 	gulp.watch(['./src/**/*.*'], ['build']);
@@ -58,7 +74,12 @@ gulp.task('clean', function() {
 	del('build/**/*.*');
 })
 
-gulp.task('build', ['templates', 'sass', 'js']);
+gulp.task('build', function(callback) {
+	runSequence('clean', ['build-css', 'build-js', 'build-libs'], 'build-html', callback);
+})
+
+
+
 
 
 
