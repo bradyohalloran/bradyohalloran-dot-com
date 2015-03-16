@@ -39,7 +39,8 @@ gulp.task('build-js', function() {
 gulp.task('build-libs', function() {
 	return gulp.src([
 		'lib/modernizr/modernizr.js', 
-		'lib/jquery/dist/jquery.min.js'
+		'lib/jquery/dist/jquery.min.js',
+		'lib/bootstrap-sass/assets/javascripts/bootstrap.min.js'
 		])
 	.pipe(concat('libs.js'))
 	//.pipe(uglify({mangle:false}))

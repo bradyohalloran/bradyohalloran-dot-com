@@ -4,9 +4,23 @@
     <title>Welcome!</title>
     <link rel="stylesheet" href="css/main.css">
     <script language="javascript" src="js/main.js"></script>
+    <script language="javascript" src="js/libs.js"></script>
   </head>
   <body>
-    <nav id="nav"></nav>
-    <p>this is happening people!</p>
+    <nav role="navigation" class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#navbar-collapsed" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-title">Brady O'Halloran</a>
+        </div>
+        <div id="navbar-collapsed" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Experience</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </body>
 </html>

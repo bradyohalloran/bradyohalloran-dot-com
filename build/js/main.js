@@ -1,3 +1,6 @@
-(function() {
-  return alert("Hello!!!");
-})();
+
+/*
+do ->
+	alert "Hello!!!"
+ */
+
