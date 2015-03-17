@@ -317,7 +317,7 @@ select{background:#fff!important}
 .glyphicon-menu-right:before{content:"\e258"}
 .glyphicon-menu-down:before{content:"\e259"}
 .glyphicon-menu-up:before{content:"\e260"}
-body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857;color:#333}
+body{font-size:14px;line-height:1.42857;color:#333}
 button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}
 a{color:#337ab7;text-decoration:none}
 a:focus,a:hover{color:#23527c;text-decoration:underline}
@@ -899,6 +899,7 @@ tbody.collapse.in{display:table-row-group}
 .nav-tabs-justified,.nav-tabs.nav-justified{border-bottom:0}
 .nav-tabs-justified>li>a,.nav-tabs.nav-justified>li>a{margin-right:0;border-radius:4px}
 .nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:focus,.nav-tabs-justified>.active>a:hover,.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border:1px solid #ddd}
+.navbar,.navbar-toggle{border:1px solid transparent}
 @media (min-width:768px){.nav-justified>li,.nav-tabs.nav-justified>li{display:table-cell;width:1%}
 .nav-justified>li>a,.nav-tabs.nav-justified>li>a{margin-bottom:0}
 .nav-tabs-justified>li>a,.nav-tabs.nav-justified>li>a{border-bottom:1px solid #ddd;border-radius:4px 4px 0 0}
@@ -933,7 +934,7 @@ tbody.collapse.in{display:table-row-group}
 @media (min-width:768px){.container-fluid>.navbar-collapse,.container-fluid>.navbar-header,.container>.navbar-collapse,.container>.navbar-header{margin-right:0;margin-left:0}
 .navbar-fixed-bottom,.navbar-fixed-top,.navbar-static-top{border-radius:0}
 .navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}}
-.navbar-toggle{position:relative;float:right;margin-right:15px;padding:9px 10px;margin-top:8px;margin-bottom:8px;background-color:transparent;border:1px solid transparent;border-radius:4px}
+.navbar-toggle{position:relative;float:right;margin-right:15px;padding:9px 10px;margin-top:8px;margin-bottom:8px;background-color:transparent;border-radius:4px}
 .navbar-toggle:focus{outline:0}
 .navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}
 .navbar-toggle .icon-bar+.icon-bar{margin-top:4px}
@@ -1336,6 +1337,7 @@ button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance
 .carousel-control .glyphicon-chevron-right,.carousel-control .icon-next{margin-right:-15px}
 .carousel-caption{left:20%;right:20%;padding-bottom:30px}
 .carousel-indicators{bottom:20px}}
+.full-width,header{width:100%}
 .clearfix:after,.clearfix:before{content:" ";display:table}
 .center-block{display:block;margin-left:auto;margin-right:auto}
 .pull-right{float:right!important}
@@ -1345,7 +1347,6 @@ button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance
 .hidden,.visible-lg,.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block,.visible-md,.visible-md-block,.visible-md-inline,.visible-md-inline-block,.visible-sm,.visible-sm-block,.visible-sm-inline,.visible-sm-inline-block,.visible-xs,.visible-xs-block,.visible-xs-inline,.visible-xs-inline-block{display:none!important}
 .invisible{visibility:hidden}
 .text-hide{font:0/0 a;color:transparent;background-color:transparent;border:0}
-.navbar .navbar-title,html{font-size:16px}
 .hidden{visibility:hidden!important}
 .affix{position:fixed}
 @-ms-viewport{width:device-width}
@@ -1394,6 +1395,12 @@ td.visible-print,th.visible-print{display:table-cell!important}}
 @media print{.visible-print-inline-block{display:inline-block!important}
 .hidden-print{display:none!important}}
 @font-face{font-family:Univers59UC;font-style:normal;font-weight:400;src:url(fonts/Univers59UC.eot);src:url(fonts/Univers59UC.eot?)format('eot'),url(fonts/Univers59UC.woff)format('woff'),url(fonts/Univers59UC.ttf)format('truetype')}
-html{-webkit-tap-highlight-color:transparent;background-color:#000}
-.navbar{border:1px solid red}
-.navbar a{font-family:'PT Sans',sans-serif}
+html{-webkit-tap-highlight-color:transparent;background-color:#000;font-size:62.5%}
+body{font-family:'PT Sans',sans-serif}
+header{height:50px}
+header a:hover{text-decoration:none}
+header .navbar{float:right;border:0;background-color:transparent;height:inherit}
+header .navbar-default .navbar-nav>li>a,header .navbar-default .navbar-text{color:#002b36;font-weight:700;font-size:15px;font-size:1.5rem}
+header #header-branding{float:left;color:#002b36;font-weight:700;line-height:50px;font-size:15px;font-size:1.5rem}
+header #header-branding span{margin-left:20px}
+header #header-branding #header-branding-title{color:#4d6b73}
