@@ -3,10 +3,9 @@
 @import web-fonts
 @import font-size
 
-
-$dark-teal: #002b36
-$dark-teal-faded: #4d6b73
-
+$color-dark-teal: #002b36
+$color-dark-teal-faded: #4d6b73
+$color-white-translucent: rgba(255,255,255,0.95)
 
 html
 	background-color: black
@@ -18,6 +17,9 @@ body
 header
 	width: 100%
 	height: 50px
+	position: absolute
+	z-index: 100
+	background-color: $color-white-translucent
 
 	a:hover
 		text-decoration: none
@@ -32,20 +34,21 @@ header
 		height: inherit
 
 		li
-			background-color: white
+			@media screen and (max-width: $screen-sm)
+				background-color: $color-white-translucent
 
 	.navbar-default
 		border: none
 		background-color: transparent
 
 	.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text
-		color: $dark-teal
+		color: $color-dark-teal
 		font-weight: bold
 		@include font-size(1.5)
 
 	#header-branding
 		float:left
-		color: $dark-teal
+		color: $color-dark-teal
 		font-weight: bold
 		line-height: 50px
 		@include font-size(1.5)
@@ -54,11 +57,20 @@ header
 			margin-left: 20px
 
 		#header-branding-title
-			color: $dark-teal-faded
-
+			color: $color-dark-teal-faded
 
 .full-width
 	width: 100%
+
+.feature-image-area
+	height: 425px
+
+#feature-image-area-1
+	height: 450px
+	background-color: $color-dark-teal
+	@include background-image-retina('feature-bg-1', 'png', 600px, 450px)
+	background-position: center
+	background-repeat: no-repeat
 
 
 

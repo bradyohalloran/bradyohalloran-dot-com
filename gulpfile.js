@@ -11,6 +11,9 @@ var del = require('del');
 var plumber = require('gulp-plumber');
 var jade = require('gulp-jade');
 var coffee = require('gulp-coffee');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
+var uncss = require('gulp-uncss');
 var runSequence = require('run-sequence');
 var livereload = require('gulp-livereload');
 
@@ -20,9 +23,10 @@ gulp.task('default', ['connect', 'watch']);
 
 gulp.task('build-css', function() {
 	return gulp.src('src/sass/main.sass')
-		.pipe(plumber())
 		.pipe(sass({indentedSyntax: true}))
-		.pipe(sourcemaps.write())
+		.pipe(uncss({
+			html: ['build/*.html']
+		}))
 		.pipe(minifyCSS({keepBreaks:true}))
 		.pipe(gulp.dest('./build/css'))
 		.pipe(connect.reload())
@@ -31,7 +35,9 @@ gulp.task('build-css', function() {
 gulp.task('build-js', function() {
 
 	return gulp.src(['src/coffee/*.coffee'])
+		.pipe(sourcemaps.init())
 		.pipe(coffee({bare:true}))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/js'))
 
 });
@@ -45,6 +51,15 @@ gulp.task('build-libs', function() {
 	.pipe(concat('libs.js'))
 	//.pipe(uglify({mangle:false}))
 	.pipe(gulp.dest('build/js'))
+})
+
+gulp.task('build-images', function() {
+	return gulp.src('assets/images/*.png')
+		.pipe(imagemin({
+			progressive: true,
+			use: [pngquant()]
+		}))
+		.pipe(gulp.dest('build/images/'));
 })
 
 gulp.task('build-html', function() {
@@ -76,7 +91,7 @@ gulp.task('clean', function() {
 })
 
 gulp.task('build', function(callback) {
-	runSequence('clean', ['build-css', 'build-js', 'build-libs'], 'build-html', callback);
+	runSequence('clean', ['build-js', 'build-libs', 'build-images'], 'build-html', 'build-css', callback);
 })
 
 
