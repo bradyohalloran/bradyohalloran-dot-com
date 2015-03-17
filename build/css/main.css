@@ -1,10 +1,8 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 body,figure{margin:0}
 *,:after,:before,input[type=search]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .popover>.arrow,.popover>.arrow:after,.tooltip-arrow{width:0;height:0;border-color:transparent;border-style:solid}
 .breadcrumb,.dropdown-menu,.list-inline,.list-unstyled,.media-list,.nav,.pager{list-style:none}
-@font-face{font-family:'PT Sans';font-style:normal;font-weight:400;src:local('PT Sans'),local('PTSans-Regular'),url(http://fonts.gstatic.com/s/ptsans/v8/FUDHvzEKSJww3kCxuiAo2A.ttf)format('truetype')}
-@font-face{font-family:'PT Sans';font-style:normal;font-weight:700;src:local('PT Sans Bold'),local('PTSans-Bold'),url(http://fonts.gstatic.com/s/ptsans/v8/0XxGQsSc1g4rdRdjJKZrNC3USBnSvpkopQaUR-2r7iU.ttf)format('truetype')}
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
 audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
@@ -41,7 +39,7 @@ td,th{padding:0}
 a,a:visited{text-decoration:underline}
 a[href]:after{content:" (" attr(href)")"}
 abbr[title]:after{content:" (" attr(title)")"}
-a[href^="#"]:after,a[href^="javascript:"]:after{content:""}
+a[href^="javascript:"]:after,a[href^="#"]:after{content:""}
 blockquote,pre{border:1px solid #999}
 thead{display:table-header-group}
 img{max-width:100%!important}
@@ -1399,7 +1397,10 @@ html{-webkit-tap-highlight-color:transparent;background-color:#000;font-size:62.
 body{font-family:'PT Sans',sans-serif}
 header{height:50px}
 header a:hover{text-decoration:none}
-header .navbar{float:right;border:0;background-color:transparent;height:inherit}
+@media screen and (min-width:768px){header .navbar{float:right}}
+header .navbar-nav{border:0;background-color:transparent;height:inherit}
+header .navbar-nav li{background-color:#fff}
+header .navbar-default{border:none;background-color:transparent}
 header .navbar-default .navbar-nav>li>a,header .navbar-default .navbar-text{color:#002b36;font-weight:700;font-size:15px;font-size:1.5rem}
 header #header-branding{float:left;color:#002b36;font-weight:700;line-height:50px;font-size:15px;font-size:1.5rem}
 header #header-branding span{margin-left:20px}

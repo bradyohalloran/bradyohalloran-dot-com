@@ -2,7 +2,7 @@
 @import retina-images
 @import web-fonts
 @import font-size
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
 
 $dark-teal: #002b36
 $dark-teal-faded: #4d6b73
@@ -23,12 +23,20 @@ header
 		text-decoration: none
 
 	.navbar
-		float: right
+		@media screen and (min-width: $screen-sm)
+			float: right
+
+	.navbar-nav
 		border: 0
 		background-color: transparent
 		height: inherit
 
-		
+		li
+			background-color: white
+
+	.navbar-default
+		border: none
+		background-color: transparent
 
 	.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text
 		color: $dark-teal
