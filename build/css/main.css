@@ -74,5 +74,6 @@ header #header-branding{float:left;color:#002b36;font-weight:700;line-height:50p
 header #header-branding span{margin-left:20px}
 header #header-branding #header-branding-title{color:#4d6b73}
 .feature-image-area{height:425px}
+.feature-image-area .feature-image-headline{position:relative;top:50%;color:#fff;text-align:center;font-family:"Phosphate Pro Solid",sans-serif;font-size-adjust:.67;font-size:70px;font-size:7rem;font-weight:400;font-style:normal}
 #feature-image-area-1{height:450px;background-color:#002b36;background-image:url(../images/feature-bg-1.png);-webkit-background-size:600px 450px;background-position:center;background-repeat:no-repeat}
 @media (-webkit-min-device-pixel-ratio:2),(-moz-min-device-pixel-ratio:2){#feature-image-area-1{background-image:url(../images/feature-bg-1@2x.png);-webkit-background-size:600px 450px}}

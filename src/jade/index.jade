@@ -1,10 +1,6 @@
 doctype html
 html(lang="en")
-	head
-		title= "Welcome!"
-		link(rel='stylesheet',href='css/main.css')
-		script(language='javascript', src='js/main.js')
-		script(language='javascript', src='js/libs.js')
+	include head.jade
 	body
 		header
 			div(class='full-width')
@@ -34,6 +30,8 @@ html(lang="en")
 								li
 									a(href='#') CONTACT
 		div(id='feature-image-area-1', class='feature-image-area')
+			div(class='feature-image-headline') BRADY O'HALLORAN IS A GIANT NERD.
+		include scripts.jade
 
 
 

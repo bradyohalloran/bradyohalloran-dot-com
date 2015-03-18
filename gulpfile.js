@@ -63,7 +63,7 @@ gulp.task('build-images', function() {
 })
 
 gulp.task('build-html', function() {
-	return gulp.src('src/jade/*.jade')
+	return gulp.src('src/jade/index.jade')
 		.pipe(plumber())
 		.pipe(jade({
 			pretty: true
