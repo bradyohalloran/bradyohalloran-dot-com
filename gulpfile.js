@@ -25,7 +25,16 @@ gulp.task('build-css', function() {
 	return gulp.src('src/sass/main.sass')
 		.pipe(sass({indentedSyntax: true}))
 		.pipe(uncss({
-			html: ['build/*.html']
+			html: ['build/*.html'],
+			ignore: [
+                ".fade",
+                ".fade.in",
+                ".collapse",
+                ".collapse.in",
+                ".collapsing",
+                ".alert-danger",
+                /\.open/
+           ]
 		}))
 		.pipe(minifyCSS({keepBreaks:true}))
 		.pipe(gulp.dest('./build/css'))

@@ -18,8 +18,9 @@ header
 	width: 100%
 	height: 50px
 	position: absolute
+	top: 0
 	z-index: 100
-	background-color: $color-white-translucent
+	background-color: #FFF
 
 	a:hover
 		text-decoration: none
@@ -35,7 +36,7 @@ header
 
 		li
 			@media screen and (max-width: $screen-sm)
-				background-color: $color-white-translucent
+				background-color: #FFF
 
 	.navbar-default
 		border: none
@@ -63,23 +64,36 @@ header
 	width: 100%
 
 .feature-image-area
-	height: 425px
+	background-size: cover
+	height: 300px
+
+	@media screen and (min-width: $screen-sm)
+		height: 400px
 
 	.feature-image-headline
 		position: relative
 		top: 50%
+		transform: translateY(-50%)
 		color: white
 		text-align: center
-		font-family:"Phosphate Pro Solid", sans-serif; 
-		font-size-adjust:0.67; 
-		@include font-size(7)
-		font-weight:normal; 
-		font-style:normal;
+		font-family:"Phosphate Pro Solid", sans-serif
+		font-weight:normal 
+		font-style:normal
+		@include font-size(5)
+		line-height: 5.5rem
+
+
+		@media screen and (min-width: $screen-sm)
+			@include font-size(7)	
+			line-height: 8.5rem
+
+		
+
 
 #feature-image-area-1
-	height: 450px
+	margin-top: 50px
 	background-color: $color-dark-teal
-	@include background-image-retina('feature-bg-1', 'png', 600px, 450px)
+	@include background-image-retina('feature-bg-1', 'png', 600px, 400px)
 	background-position: center
 	background-repeat: no-repeat
 
