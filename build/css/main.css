@@ -108,8 +108,9 @@ header .navbar-default .navbar-nav>li>a{color:#002b36;font-weight:700;font-size:
 header #header-branding{float:left;color:#002b36;font-weight:700;line-height:50px;font-size:15px;font-size:1.5rem}
 header #header-branding span{margin-left:20px}
 header #header-branding #header-branding-title{color:#4d6b73}
+@media screen and (max-width:480px){header #header-branding #header-branding-title{display:none}}
 .feature-image-area{background-size:cover;height:300px}
-.feature-image-area .feature-image-headline{position:relative;top:50%;transform:translateY(-50%);text-align:center}
+.feature-image-area .feature-image-headline{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);text-align:center}
 .feature-image-area .feature-image-headline .feature-image-headline-shadow,.feature-image-area .feature-image-headline .feature-image-headline-text{background-image:url(../images/feature-image-headline-bg.png);-webkit-background-size:875px 325px;font-size:50px;font-size:5rem;position:relative;top:0;width:100%;color:transparent;font-family:"Phosphate Pro Solid",sans-serif;font-weight:400;font-style:normal;line-height:5.5rem;background-position:center;background-size:cover;-webkit-background-clip:text;background-color:#002b36;background-blend-mode:screen}
 @media (-webkit-min-device-pixel-ratio:2),(-moz-min-device-pixel-ratio:2){.feature-image-area .feature-image-headline .feature-image-headline-shadow,.feature-image-area .feature-image-headline .feature-image-headline-text{background-image:url(../images/feature-image-headline-bg@2x.png);-webkit-background-size:875px 325px}}
 @media screen and (min-width:768px){.feature-image-area{height:400px}

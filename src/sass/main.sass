@@ -59,6 +59,8 @@ header
 
 		#header-branding-title
 			color: $color-dark-teal-faded
+			@media screen and (max-width: $screen-xs)
+				display: none
 
 .full-width
 	width: 100%
@@ -73,6 +75,7 @@ header
 	.feature-image-headline
 		position: relative
 		top: 50%
+		-webkit-transform: translateY(-50%)
 		transform: translateY(-50%)
 		text-align: center
 
