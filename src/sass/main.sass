@@ -74,18 +74,36 @@ header
 		position: relative
 		top: 50%
 		transform: translateY(-50%)
-		color: white
 		text-align: center
-		font-family:"Phosphate Pro Solid", sans-serif
-		font-weight:normal 
-		font-style:normal
-		@include font-size(5)
-		line-height: 5.5rem
 
+		.feature-image-headline-text
+			@include background-image-retina('feature-image-headline-bg', 'png', 875px, 325px)
+			@include font-size(5)
+			position: relative
+			top: 0
+			width: 100%
+			color: transparent
+			font-family:"Phosphate Pro Solid", sans-serif
+			font-weight:normal 
+			font-style:normal
+			line-height: 5.5rem
+			background-position: center
+			background-size: cover
+			-webkit-background-clip: text
+			background-color: $color-dark-teal
+			background-blend-mode: screen
 
-		@media screen and (min-width: $screen-sm)
-			@include font-size(7)	
-			line-height: 8.5rem
+			@media screen and (min-width: $screen-sm)
+				@include font-size(7)	
+				line-height: 8.5rem
+
+		.feature-image-headline-shadow
+			@extend .feature-image-headline-text
+			z-index: -100
+			position: absolute
+			top: 0
+			background: none;
+			text-shadow: 0 0 30px rgba(100,100,100,0.5)
 
 		
 
