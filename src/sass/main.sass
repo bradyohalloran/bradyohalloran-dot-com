@@ -3,8 +3,9 @@
 @import web-fonts
 @import font-size
 
-$color-dark-teal: #002b36
+$color-dark-teal: #142b36
 $color-dark-teal-faded: #4d6b73
+$color-dark-teal-text-fallback: #ececec
 $color-white-translucent: rgba(255,255,255,0.95)
 
 html
@@ -66,7 +67,7 @@ header
 	width: 100%
 
 .feature-image-area
-	background-size: cover
+
 	height: 300px
 
 	@media screen and (min-width: $screen-sm)
@@ -80,21 +81,24 @@ header
 		text-align: center
 
 		.feature-image-headline-text
-			@include background-image-retina('feature-image-headline-bg', 'png', 875px, 325px)
+			
 			@include font-size(5)
 			position: relative
 			top: 0
 			width: 100%
-			color: transparent
+			color: $color-dark-teal-text-fallback
 			font-family:"Phosphate Pro Solid", sans-serif
 			font-weight:normal 
 			font-style:normal
 			line-height: 5.5rem
+			
+			// webkit browsers get the textured text
 			background-position: center
 			background-size: cover
-			-webkit-background-clip: text
-			background-color: $color-dark-teal
 			background-blend-mode: screen
+			background: -webkit-linear-gradient(transparent, transparent), url(../images/feature-image-headline-bg@2x.png) repeat;
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
 
 			@media screen and (min-width: $screen-sm)
 				@include font-size(7)	
@@ -106,7 +110,9 @@ header
 			position: absolute
 			top: 0
 			background: none;
-			text-shadow: 0 0 30px rgba(100,100,100,0.5)
+			text-shadow: 0 0 15px rgba(0,0,0,0.5)
+
+
 
 		
 
