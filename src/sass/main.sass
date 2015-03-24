@@ -2,6 +2,7 @@
 @import retina-images
 @import web-fonts
 @import font-size
+@import url(http://fonts.googleapis.com/css?family=PT+Serif);
 
 $color-dark-teal: #142b36
 $color-dark-teal-faded: #4d6b73
@@ -66,8 +67,7 @@ header
 .full-width
 	width: 100%
 
-.feature-image-area
-
+.feature-image
 	height: 300px
 
 	@media screen and (min-width: $screen-sm)
@@ -81,7 +81,6 @@ header
 		text-align: center
 
 		.feature-image-headline-text
-			
 			@include font-size(5)
 			position: relative
 			top: 0
@@ -113,16 +112,58 @@ header
 			text-shadow: 0 0 15px rgba(0,0,0,0.5)
 
 
+.feature-copy
+	
+	background: white
+	height: 1000px
 
+
+	h1
+		font-family:"Phosphate Pro Solid", sans-serif
+		text-align: center
+		@include font-size(3)
+		margin: 30px 0
+
+
+	.feature-copy-inner
+		margin: 0 auto 0 auto
+		width: 350px
 		
+		@media screen and (min-width: $screen-xs)
+			width: 450px
+		
+		@media screen and (min-width: $screen-sm)
+			width: 600px
+
+			h1
+				@include font-size(3.6)
+
+	p
+		font-family: 'PT Serif', serif
+		@include font-size(1.8)
+		line-height: 2.4rem
+		margin: 0 0 20px 0
+		font-weight: 300
 
 
-#feature-image-area-1
-	margin-top: 50px
-	background-color: $color-dark-teal
-	@include background-image-retina('feature-bg-1', 'png', 600px, 400px)
-	background-position: center
-	background-repeat: no-repeat
+
+		@media screen and (min-width: $screen-sm)
+			padding: 0 20px
+
+
+
+
+
+#feature-1
+	.feature-image
+		margin-top: 50px
+		background-color: $color-dark-teal
+		@include background-image-retina('feature-bg-1', 'png', 450px, 300px)
+		background-position: center
+		background-repeat: no-repeat
+
+		@media screen and (min-width: $screen-sm)
+			@include background-image-retina('feature-bg-1', 'png', 600px, 400px)
 
 
 
