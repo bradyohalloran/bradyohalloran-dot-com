@@ -23,7 +23,9 @@ gulp.task('default', ['connect', 'watch']);
 
 gulp.task('build-css', function() {
 	return gulp.src('src/sass/main.sass')
+		.pipe(plumber())
 		.pipe(sass({indentedSyntax: true}))
+		.pipe(plumber())
 		.pipe(uncss({
 			html: ['build/*.html'],
 			ignore: [
@@ -33,7 +35,8 @@ gulp.task('build-css', function() {
                 ".collapse.in",
                 ".collapsing",
                 ".alert-danger",
-                /\.open/
+                /\.open/,
+                /[#.]rolling-text-*[A-Za-z-0-9]*/,
            ]
 		}))
 		.pipe(minifyCSS({keepBreaks:true}))
@@ -99,8 +102,12 @@ gulp.task('clean', function() {
 	del('build/**/*.*');
 })
 
-gulp.task('build', function(callback) {
+gulp.task('full-build', function(callback) {
 	runSequence('clean', ['build-js', 'build-libs', 'build-images'], 'build-html', 'build-css', callback);
+})
+
+gulp.task('build', function(callback) {
+	runSequence(['build-js', 'build-libs'], 'build-html', 'build-css', callback);
 })
 
 

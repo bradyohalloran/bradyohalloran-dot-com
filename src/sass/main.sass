@@ -7,6 +7,9 @@
 $color-dark-teal: #142b36
 $color-dark-teal-faded: #4d6b73
 $color-dark-teal-text-fallback: #ececec
+
+$color-dark-brown: #615039
+
 $color-white-translucent: rgba(255,255,255,0.95)
 
 html
@@ -69,6 +72,8 @@ header
 
 .feature-image
 	height: 300px
+	background-position: center
+	background-repeat: no-repeat
 
 	@media screen and (min-width: $screen-sm)
 		height: 400px
@@ -81,7 +86,7 @@ header
 		text-align: center
 
 		.feature-image-headline-text
-			@include font-size(5)
+			@include font-size(4)
 			position: relative
 			top: 0
 			width: 100%
@@ -89,7 +94,7 @@ header
 			font-family:"Phosphate Pro Solid", sans-serif
 			font-weight:normal 
 			font-style:normal
-			line-height: 5.5rem
+			line-height: 5rem
 			
 			// webkit browsers get the textured text
 			background-position: center
@@ -111,12 +116,9 @@ header
 			background: none;
 			text-shadow: 0 0 15px rgba(0,0,0,0.5)
 
-
 .feature-copy
-	
 	background: white
-	height: 1000px
-
+	padding: 0 0 50px 0
 
 	h1
 		font-family:"Phosphate Pro Solid", sans-serif
@@ -124,6 +126,24 @@ header
 		@include font-size(3)
 		margin: 30px 0
 
+		#text-roller
+			white-space: nowrap
+			display: block
+			position: relative
+			top: 0
+			height: 35px
+			overflow: hidden
+
+			@media screen and (min-width: $screen-sm)
+				height: 40px
+
+			.rolling-text
+				position: absolute
+				width: 100%
+				top: 0
+
+
+				
 
 	.feature-copy-inner
 		margin: 0 auto 0 auto
@@ -145,25 +165,31 @@ header
 		margin: 0 0 20px 0
 		font-weight: 300
 
-
-
 		@media screen and (min-width: $screen-sm)
 			padding: 0 20px
 
-
-
-
-
 #feature-1
+	color: $color-dark-teal
+
 	.feature-image
 		margin-top: 50px
 		background-color: $color-dark-teal
 		@include background-image-retina('feature-bg-1', 'png', 450px, 300px)
-		background-position: center
-		background-repeat: no-repeat
 
 		@media screen and (min-width: $screen-sm)
 			@include background-image-retina('feature-bg-1', 'png', 600px, 400px)
+
+#feature-2
+	color: $color-dark-brown
+
+	.feature-image
+		background-size: cover !important
+		background-color: $color-dark-brown
+		@include background-image-retina('feature-bg-2', 'png', 800px, 300px)
+
+		@media screen and (min-width: $screen-sm)
+			@include background-image-retina('feature-bg-2', 'png', 1200px, 400px)
+
 
 
 
