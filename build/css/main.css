@@ -73,6 +73,7 @@ ul{margin-top:0}
 .navbar-nav .open .dropdown-menu .dropdown-header,.navbar-nav .open .dropdown-menu>li>a{padding:5px 15px 5px 25px}
 .navbar-nav .open .dropdown-menu>li>a{line-height:20px}
 .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-nav .open .dropdown-menu>li>a:hover{background-image:none}}
+.full-width,header{width:100%}
 @media (min-width:768px){.navbar-toggle{display:none}
 .navbar-nav{float:left;margin:0}
 .navbar-nav>li{float:left}
@@ -100,7 +101,7 @@ ul{margin-top:0}
 @-ms-viewport{width:device-width}
 @font-face{font-family:Univers59UC;font-style:normal;font-weight:400;src:url(fonts/Univers59UC.eot);src:url(fonts/Univers59UC.eot?)format('eot'),url(fonts/Univers59UC.woff)format('woff'),url(fonts/Univers59UC.ttf)format('truetype')}
 html{-webkit-tap-highlight-color:transparent;background-color:#000;font-size:62.5%}
-header{width:100%;height:50px;position:absolute;top:0;z-index:100;background-color:#FFF}
+header{height:50px;position:absolute;top:0;z-index:100;background-color:#FFF}
 header a:hover{text-decoration:none}
 @media screen and (min-width:768px){header .navbar{float:right}}
 header .navbar-nav{border:0;background-color:transparent;height:inherit}
@@ -111,9 +112,8 @@ header #header-branding{float:left;color:#142b36;font-weight:700;line-height:50p
 header #header-branding span{margin-left:20px}
 header #header-branding #header-branding-title{color:#4d6b73}
 @media screen and (max-width:480px){header #header-branding #header-branding-title{display:none}}
-.full-width{width:100%}
 .feature-image{height:300px;background-position:center;background-repeat:no-repeat}
-.feature-image .feature-image-headline{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);text-align:center}
+.feature-image .feature-image-headline{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);text-align:center;width:90%;margin:0 auto}
 .feature-image .feature-image-headline .feature-image-headline-shadow,.feature-image .feature-image-headline .feature-image-headline-text{font-size:40px;font-size:4rem;position:relative;top:0;width:100%;color:#ececec;font-family:"Phosphate Pro Solid",sans-serif;font-weight:400;font-style:normal;line-height:5rem;background-blend-mode:screen;background:-webkit-linear-gradient(transparent,transparent),url(../images/feature-image-headline-bg@2x.png);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 @media screen and (min-width:768px){.feature-image{height:400px}
 .feature-image .feature-image-headline .feature-image-headline-shadow,.feature-image .feature-image-headline .feature-image-headline-text{font-size:70px;font-size:7rem;line-height:8.5rem}}
@@ -122,7 +122,7 @@ header #header-branding #header-branding-title{color:#4d6b73}
 .feature-copy h1{font-family:"Phosphate Pro Solid",sans-serif;text-align:center;font-size:30px;font-size:3rem;margin:30px 0}
 .feature-copy h1 #text-roller{white-space:nowrap;display:block;position:relative;top:0;height:35px;overflow:hidden}
 .feature-copy h1 #text-roller .rolling-text{position:absolute;width:100%;top:0}
-.feature-copy .feature-copy-inner{margin:0 auto;width:350px}
+.feature-copy .feature-copy-inner{margin:0 auto;width:320px}
 @media screen and (min-width:480px){.feature-copy .feature-copy-inner{width:450px}}
 @media screen and (min-width:768px){.feature-copy h1 #text-roller{height:40px}
 .feature-copy .feature-copy-inner{width:600px}

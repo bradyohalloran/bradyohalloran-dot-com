@@ -18,18 +18,9 @@ $(document).ready ->
 						i=0
 					$('#rolling-text-1').html(jobTitles[i])
 
-
 					$('#rolling-text-1').css("top", "-=40")
-					$('#rolling-text-1').animate({top: "0"}, 500, -> {
-
-						})
+					$('#rolling-text-1').animate({top: "0"}, 500)
 
 					$('#rolling-text-2').css("top", "0")
-					$('#rolling-text-2').animate({top: "40"}, 500, -> {
-
-						})
-
-
-
-					
+					$('#rolling-text-2').animate({top: "40"}, 500)
 				, 2000
