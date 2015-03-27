@@ -7,6 +7,7 @@ var concat = require('gulp-concat');
 var slim = require('gulp-slim');
 var minifyCSS = require('gulp-minify-css');
 var connect = require('gulp-connect');
+var copy = require('gulp-copy');
 var del = require('del');
 var plumber = require('gulp-plumber');
 var jade = require('gulp-jade');
@@ -42,6 +43,13 @@ gulp.task('build-css', function() {
 		.pipe(minifyCSS({keepBreaks:true}))
 		.pipe(gulp.dest('./build/css'))
 		.pipe(connect.reload())
+});
+
+gulp.task('build-fonts', function() {
+	return gulp.src(['lib/fontawesome/fonts/fontawesome-webfont.*'])
+		.pipe(copy('build/css/fonts/', {
+			prefix: 3
+		}))
 });
 
 gulp.task('build-js', function() {
@@ -103,11 +111,11 @@ gulp.task('clean', function() {
 })
 
 gulp.task('full-build', function(callback) {
-	runSequence('clean', ['build-js', 'build-libs', 'build-images'], 'build-html', 'build-css', callback);
+	runSequence('clean', ['build-js', 'build-libs', 'build-images', 'build-fonts'], 'build-html', 'build-css', callback);
 })
 
 gulp.task('build', function(callback) {
-	runSequence(['build-js', 'build-libs'], 'build-html', 'build-css', callback);
+	runSequence(['build-js', 'build-libs', 'build-fonts'], 'build-html', 'build-css', callback);
 })
 
 

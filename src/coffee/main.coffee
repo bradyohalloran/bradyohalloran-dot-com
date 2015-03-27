@@ -13,6 +13,7 @@ $(document).ready ->
 	$('#text-roller').append("<div id='rolling-text-1' class='rolling-text'>"+jobTitles[0]+"</div><div id='rolling-text-2' class='rolling-text'></div>")
 
 	myInterval = setInterval ->
+					console.log('hey')
 					$('#rolling-text-2').html(jobTitles[i++])
 					if i >= jobTitles.length
 						i=0

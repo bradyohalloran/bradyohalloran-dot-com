@@ -1,4 +1,5 @@
 @import "./lib/bootstrap-sass/assets/stylesheets/_bootstrap.scss"
+@import "./lib/fontawesome/scss/font-awesome.scss"
 @import retina-images
 @import web-fonts
 @import font-size
@@ -150,6 +151,42 @@ header
 	.feature-copy-inner
 		margin: 0 auto 0 auto
 		width: 320px
+
+		p, li
+		font-family: 'PT Serif', serif
+		@include font-size(1.8)
+
+		p
+			line-height: 2.4rem
+			margin: 0 0 20px 0
+			font-weight: 300
+
+			@media screen and (min-width: $screen-sm)
+				padding: 0 20px
+
+		ul
+			@extend .clearfix
+
+
+		li
+			@extend .col-sm-6
+			list-style-type: none
+			font-family: 'PT Serif', serif
+			@include font-size(1.8)
+			
+			i
+				width: 25px
+				text-align: center
+				margin-right: 10px
+				color: rgba(97,80,57,0.5)
+				
+				&:before
+					content: "\f061"
+			
+
+
+
+
 		
 		@media screen and (min-width: $screen-xs)
 			width: 450px
@@ -160,15 +197,7 @@ header
 			h1
 				@include font-size(3.6)
 
-	p
-		font-family: 'PT Serif', serif
-		@include font-size(1.8)
-		line-height: 2.4rem
-		margin: 0 0 20px 0
-		font-weight: 300
-
-		@media screen and (min-width: $screen-sm)
-			padding: 0 20px
+	
 
 #feature-1
 	color: $color-dark-teal
