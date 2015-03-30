@@ -3,7 +3,36 @@ do ->
 	alert "Hello!!!"
 ###
 
+
+
+init = () ->
+	console.log('do the things')
+	setScrolling()
+	return
+
+setScrolling = () ->
+
+
+
+	
+	$("#feature-1 .feature-image").attr("data-anchor-target", "#feature-1 .feature-copy");
+	$("#feature-1 .feature-image").attr("data-400-top", "transform:translate3d(0px, 0px, 0px)");
+	$("#feature-1 .feature-image").attr("data-top", "transform:translate3d(0px, -150px, 0px)");
+
+
+
+
+
+
+	s = skrollr.init smoothScrolling: false
+
+
+	return
+	
+
 $(document).ready ->
+
+	init()
 
 	headerShowing = true
 
@@ -21,7 +50,7 @@ $(document).ready ->
 	$(window).scroll (event)->
 		st = $(this).scrollTop()
 		
-		if st > lst and st > 0
+		if st > lst and st > 200
 			if headerShowing
 				$('header').animate({top: "-50"}, 250)
 				headerShowing = false

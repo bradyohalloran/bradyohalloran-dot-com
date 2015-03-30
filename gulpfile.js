@@ -68,7 +68,8 @@ gulp.task('build-libs', function() {
 		'lib/modernizr/modernizr.js', 
 		'lib/jquery/dist/jquery.min.js',
 		'lib/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-		'lib/waypoints/lib/jquery.waypoints.js'
+		'lib/waypoints/lib/jquery.waypoints.js',
+		'lib/skrollr/dist/skrollr.min.js'
 		])
 	.pipe(concat('libs.js'))
 	//.pipe(uglify({mangle:false}))

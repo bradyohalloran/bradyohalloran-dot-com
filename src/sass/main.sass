@@ -73,6 +73,7 @@ header
 
 .feature-image
 	height: 300px
+	width: 100%
 	background-position: center
 	background-repeat: no-repeat
 
@@ -120,6 +121,7 @@ header
 			text-shadow: 0 0 15px rgba(0,0,0,0.5)
 
 .feature-copy
+	@extend .clearfix
 	background: white
 	padding: 0 0 50px 0
 
@@ -203,13 +205,21 @@ header
 	color: $color-dark-teal
 
 	.feature-image
+		@extend .clearfix
 		margin-top: 50px
 		background-color: $color-dark-teal
-
 		@include background-image-retina('feature-bg-1', 'png', 450px, 300px)
 
 		@media screen and (min-width: $screen-sm)
 			@include background-image-retina('feature-bg-1', 'png', 600px, 400px)
+			position: fixed
+			top: 0
+			z-index: -200
+
+
+	.feature-copy
+		@media screen and (min-width: $screen-sm)
+			margin-top: 400px
 
 #feature-2
 	color: $color-dark-brown
