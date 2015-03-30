@@ -1,4 +1,4 @@
-@each $font-face in "Univers59UC" {
+@each $font-face in "fontawesome-webfont" {
     @font-face {
         font-family: $font-face; font-style: normal; font-weight: normal;
         src: url('fonts/#{$font-face}.eot');

@@ -123,10 +123,10 @@ ul{margin-top:0}
 .fa-cube:before{content:"\f1b2"}
 .fa-paint-brush:before{content:"\f1fc"}
 .fa-server:before{content:"\f233"}
-@font-face{font-family:Univers59UC;font-style:normal;font-weight:400;src:url(fonts/Univers59UC.eot);src:url(fonts/Univers59UC.eot?)format('eot'),url(fonts/Univers59UC.woff)format('woff'),url(fonts/Univers59UC.ttf)format('truetype')}
-html{-webkit-tap-highlight-color:transparent;background-color:#000;font-size:62.5%}
+@font-face{font-family:fontawesome-webfont;font-style:normal;font-weight:400;src:url(fonts/fontawesome-webfont.eot);src:url(fonts/fontawesome-webfont.eot?)format('eot'),url(fonts/fontawesome-webfont.woff)format('woff'),url(fonts/fontawesome-webfont.ttf)format('truetype')}
+html{-webkit-tap-highlight-color:transparent;background-color:#fff;font-size:62.5%}
 body{font-family:'PT Sans',sans-serif}
-header{height:50px;position:absolute;top:0;z-index:100;background-color:#FFF}
+header{height:50px;position:fixed;top:0;z-index:100;background-color:#FFF}
 header a:hover{text-decoration:none}
 @media screen and (min-width:768px){header .navbar{float:right}}
 header .navbar-nav{border:0;background-color:transparent;height:inherit}

@@ -56,6 +56,7 @@ gulp.task('build-js', function() {
 
 	return gulp.src(['src/coffee/*.coffee'])
 		.pipe(sourcemaps.init())
+		.pipe(plumber())
 		.pipe(coffee({bare:true}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build/js'))
@@ -66,7 +67,8 @@ gulp.task('build-libs', function() {
 	return gulp.src([
 		'lib/modernizr/modernizr.js', 
 		'lib/jquery/dist/jquery.min.js',
-		'lib/bootstrap-sass/assets/javascripts/bootstrap.min.js'
+		'lib/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+		'lib/waypoints/lib/jquery.waypoints.js'
 		])
 	.pipe(concat('libs.js'))
 	//.pipe(uglify({mangle:false}))
