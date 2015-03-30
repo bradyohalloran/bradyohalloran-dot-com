@@ -21,7 +21,7 @@ $(document).ready ->
 	$(window).scroll (event)->
 		st = $(this).scrollTop()
 		
-		if st > lst
+		if st > lst and st > 0
 			if headerShowing
 				$('header').animate({top: "-50"}, 250)
 				headerShowing = false
