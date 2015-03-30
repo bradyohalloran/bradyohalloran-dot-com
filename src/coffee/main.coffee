@@ -3,48 +3,60 @@ do ->
 	alert "Hello!!!"
 ###
 
-
+windowWidth=0
 
 init = () ->
-	console.log('do the things')
-	setScrolling()
+	setScrollParams()
+	checkParallax()
+
+	$(window).on("debouncedresize", (event)->
+		resized()
+	 )
+
 	return
 
-setScrolling = () ->
+
+resized = () ->
+	if $(window).width() != windowWidth
+		checkParallax()
+		windowWidth = $(window).width()
+	return
 
 
+checkParallax = () ->
+	if Modernizr.touch or Modernizr.mq('only screen and (max-width: 768px)')
+        killParallax()
+    else
+    	setParallax()
+    return
+  
 
-	
+setParallax = () ->
+	s = skrollr.init smoothScrolling: false
+	return
+
+killParallax = () ->
+	skrollr.init().destroy()
+	return
+
+
+setScrollParams = () ->
 	$("#feature-1 .feature-image").attr("data-anchor-target", "#feature-1 .feature-copy");
 	$("#feature-1 .feature-image").attr("data-400-top", "transform:translate3d(0px, 0px, 0px)");
 	$("#feature-1 .feature-image").attr("data-top", "transform:translate3d(0px, -150px, 0px)");
 
 
-
-
-
-
-	s = skrollr.init smoothScrolling: false
-
+	$("#feature-2 .feature-image .parallax-bg").attr("data-anchor-target", "#feature-2 .feature-image");
+	$("#feature-2 .feature-image .parallax-bg").attr("data-bottom-top", "transform:translate3d(0px, -200px, 0px)");
+	$("#feature-2 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 0px, 0px)");
 
 	return
 	
-
 $(document).ready ->
 
 	init()
 
 	headerShowing = true
-
-	waypoint = $('#feature-1').waypoint handler:(direction)->
-		if direction == 'up'
-
-		else
-
-
-
-
-		return
 
 	lst = 0
 	$(window).scroll (event)->

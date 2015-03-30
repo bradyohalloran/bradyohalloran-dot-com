@@ -47,7 +47,7 @@ gulp.task('build-css', function() {
 
 gulp.task('build-fonts', function() {
 	return gulp.src(['lib/fontawesome/fonts/fontawesome-webfont.*'])
-		.pipe(copy('build/css/fonts/', {
+		.pipe(copy('build/fonts/', {
 			prefix: 3
 		}))
 });
@@ -68,8 +68,8 @@ gulp.task('build-libs', function() {
 		'lib/modernizr/modernizr.js', 
 		'lib/jquery/dist/jquery.min.js',
 		'lib/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-		'lib/waypoints/lib/jquery.waypoints.js',
-		'lib/skrollr/dist/skrollr.min.js'
+		'lib/skrollr/dist/skrollr.min.js',
+		'lib/jquery.debouncedresize/js/jquery.debouncedresize.js'
 		])
 	.pipe(concat('libs.js'))
 	//.pipe(uglify({mangle:false}))
