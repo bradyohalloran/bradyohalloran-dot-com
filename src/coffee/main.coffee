@@ -42,11 +42,12 @@ killParallax = () ->
 
 setScrollParams = () ->
 	
-	$("#feature-1 .feature-image .parallax-bg").attr("data-50-top", "transform:translate3d(0px, 0px, 0px)");
-	$("#feature-1 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 100px, 0px)");
+	$(".feature-1 .feature-image .parallax-bg").attr("data-50-top", "transform:translate3d(0px, 0px, 0px)");
+	$(".feature-1 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 100px, 0px)");
 
-	$("#feature-2 .feature-image .parallax-bg").attr("data-bottom-top", "transform:translate3d(0px, -200px, 0px)");
-	$("#feature-2 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 0px, 0px)");
+
+	$(".feature-2 .feature-image .parallax-bg").attr("data-bottom-top", "transform:translate3d(0px, -200px, 0px)");
+	$(".feature-2 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 0px, 0px)");
 
 	return
 	
@@ -60,7 +61,7 @@ $(document).ready ->
 	$(window).scroll (event)->
 		st = $(this).scrollTop()
 		
-		if st > lst and st > 50
+		if st > lst and st > 200
 			if headerShowing
 				$('header').animate({top: "-50"}, 250)
 				headerShowing = false

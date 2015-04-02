@@ -149,6 +149,6 @@ header #header-branding #header-branding-title{color:#4d6b73}
 @media (-webkit-min-device-pixel-ratio:2),(-moz-min-device-pixel-ratio:2){.feature-1 .feature-image .parallax-bg{background-image:url(../images/feature-bg-1@2x.png);-webkit-background-size:450px 300px}}
 @media screen and (min-width:768px){.feature-1 .feature-image .parallax-bg{height:400px;-webkit-background-size:600px 400px;top:0}}
 .feature-2{color:#615039}
-.feature-2 .feature-image .parallax-bg{background-size:cover!important;background-color:#615039;background-image:url(../images/feature-bg-2b.png);-webkit-background-size:800px 400px;background-position:center;top:-300px}
-@media (-webkit-min-device-pixel-ratio:2),(-moz-min-device-pixel-ratio:2){.feature-2 .feature-image .parallax-bg{background-image:url(../images/feature-bg-2b@2x.png);-webkit-background-size:800px 400px}}
+.feature-2 .feature-image .parallax-bg{background-size:cover!important;background-color:#615039;background-image:url(../images/feature-bg-2.jpg);-webkit-background-size:800px 400px;background-position:center;top:-300px}
+@media (-webkit-min-device-pixel-ratio:2),(-moz-min-device-pixel-ratio:2){.feature-2 .feature-image .parallax-bg{background-image:url(../images/feature-bg-2@2x.jpg);-webkit-background-size:800px 400px}}
 @media screen and (min-width:768px){.feature-2 .feature-image .parallax-bg{-webkit-background-size:1200px 600px;top:0}}

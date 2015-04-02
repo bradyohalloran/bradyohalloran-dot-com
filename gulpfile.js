@@ -14,6 +14,7 @@ var jade = require('gulp-jade');
 var coffee = require('gulp-coffee');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var mozjpeg = require('imagemin-mozjpeg')
 var uncss = require('gulp-uncss');
 var runSequence = require('run-sequence');
 var livereload = require('gulp-livereload');
@@ -76,11 +77,20 @@ gulp.task('build-libs', function() {
 	.pipe(gulp.dest('build/js'))
 })
 
-gulp.task('build-images', function() {
+gulp.task('build-images-png', function() {
 	return gulp.src('assets/images/*.png')
 		.pipe(imagemin({
 			progressive: true,
 			use: [pngquant()]
+		}))
+		.pipe(gulp.dest('build/images/'));
+})
+
+gulp.task('build-images-jpg', function() {
+	return gulp.src('assets/images/*.jpg')
+		.pipe(imagemin({
+			progressive: true,
+			use: [mozjpeg()]
 		}))
 		.pipe(gulp.dest('build/images/'));
 })
@@ -114,7 +124,7 @@ gulp.task('clean', function() {
 })
 
 gulp.task('full-build', function(callback) {
-	runSequence('clean', ['build-js', 'build-libs', 'build-images', 'build-fonts'], 'build-html', 'build-css', callback);
+	runSequence('clean', ['build-js', 'build-libs', 'build-images-png', 'build-images-jpg', 'build-fonts'], 'build-html', 'build-css', callback);
 })
 
 gulp.task('build', function(callback) {
