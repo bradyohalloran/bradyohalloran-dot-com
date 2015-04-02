@@ -85,7 +85,7 @@ header
 		background-repeat: no-repeat
 		width: 100%
 		height: 600px
-		position: relative
+		position: absolute
 		top: 0
 
 
@@ -176,42 +176,37 @@ header
 			@media screen and (min-width: $screen-sm)
 				padding: 0 20px
 
+		a, a:visited
+			color: inherit
+			text-decoration: underline
+
 		ul
 			@extend .clearfix
-
+			margin: 0 0 20px 0
 
 		li
 			@extend .col-sm-6
 			list-style-type: none
 			font-family: 'PT Serif', serif
 			@include font-size(1.8)
-			
-			i
-				width: 25px
-				text-align: center
+
+			&:before
+				@extend .fa
+				content: "\f061"
 				margin-right: 10px
-				color: rgba(97,80,57,0.5)
-				
-				&:before
-					content: "\f061"
+				color: rgba(97,80,57,0.5)				
 			
-
-
-
-
-		
 		@media screen and (min-width: $screen-xs)
 			width: 450px
 		
 		@media screen and (min-width: $screen-sm)
-			width: 600px
+			width: 650px
 
 			h1
 				@include font-size(3.6)
 
 	
-
-#feature-1
+.feature-1
 	color: $color-dark-teal
 	margin-top: 50px
 
@@ -223,18 +218,13 @@ header
 			background-color: $color-dark-teal
 			@include background-image-retina('feature-bg-1', 'png', 450px, 300px)
 			background-position: center
-			position: absolute
 
 			@media screen and (min-width: $screen-sm)
 				height: 400px
-				@include background-image-retina('feature-bg-1', 'png', 600px, 400px)
-				position: absolute
+				-webkit-background-size: 600px 400px;
 				top: 0
 
-
-			
-
-#feature-2
+.feature-2
 	color: $color-dark-brown
 
 	.feature-image
@@ -244,23 +234,11 @@ header
 			background-color: $color-dark-brown
 			@include background-image-retina('feature-bg-2b', 'png', 800px, 400px)
 			background-position: center
-			position: absolute
 			top: -300px
 
 			@media screen and (min-width: $screen-sm)
-				@include background-image-retina('feature-bg-2b', 'png', 1200px, 600px)
-				position: absolute
+				-webkit-background-size: 1200px 600px;
 				top: 0
-
-
-
-
-
-
-
-
-		
-
 
 
 
