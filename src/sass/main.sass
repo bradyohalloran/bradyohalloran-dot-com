@@ -5,11 +5,14 @@
 @import font-size
 @import url(http://fonts.googleapis.com/css?family=PT+Serif);
 
-$color-dark-teal: #142b36
-$color-dark-teal-faded: #4d6b73
-$color-dark-teal-text-fallback: #ececec
+$color-firefly: #142b36
+$color-firefly-faded: #4d6b73
+$color-firefly-text-fallback: #ececec
 
-$color-dark-brown: #615039
+$color-kabul: #615039
+
+$color-eden: #145149
+
 
 $color-white-translucent: rgba(255,255,255,0.95)
 
@@ -49,13 +52,13 @@ header
 		background-color: transparent
 
 	.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text
-		color: $color-dark-teal
+		color: $color-firefly
 		font-weight: bold
 		@include font-size(1.5)
 
 	#header-branding
 		float:left
-		color: $color-dark-teal
+		color: $color-firefly
 		font-weight: bold
 		line-height: 50px
 		@include font-size(1.5)
@@ -64,7 +67,7 @@ header
 			margin-left: 20px
 
 		#header-branding-title
-			color: $color-dark-teal-faded
+			color: $color-firefly-faded
 			@media screen and (max-width: $screen-xs)
 				display: none
 
@@ -103,19 +106,12 @@ header
 			position: relative
 			top: 0
 			width: 100%
-			color: $color-dark-teal-text-fallback
+			color: $color-firefly-text-fallback
 			font-family:"Phosphate Pro Solid", sans-serif
 			font-weight:normal 
 			font-style:normal
 			line-height: 5rem
-			
-			// webkit browsers get the textured text
-			background-position: center
-			background-size: cover
-			background-blend-mode: screen
-			background: -webkit-linear-gradient(transparent, transparent), url(../images/feature-image-headline-bg@2x.png) repeat;
-			-webkit-background-clip: text
-			-webkit-text-fill-color: transparent
+		
 
 			@media screen and (min-width: $screen-sm)
 				@include font-size(7)	
@@ -200,14 +196,14 @@ header
 			width: 450px
 		
 		@media screen and (min-width: $screen-sm)
-			width: 650px
+			width: 700px
 
 			h1
 				@include font-size(3.6)
 
 	
 .feature-1
-	color: $color-dark-teal
+	color: $color-firefly
 	margin-top: 50px
 
 	.feature-image
@@ -215,8 +211,8 @@ header
 			@extend .clearfix
 			height: 300px
 
-			background-color: $color-dark-teal
-			@include background-image-retina('feature-bg-1', 'png', 450px, 300px)
+			background-color: $color-firefly
+			@include background-image-retina('feature-bg-1', 'jpg', 450px, 300px)
 			background-position: center
 
 			@media screen and (min-width: $screen-sm)
@@ -224,14 +220,23 @@ header
 				-webkit-background-size: 600px 400px;
 				top: 0
 
+		.feature-image-headline
+			.feature-image-headline-text
+				// webkit browsers get the textured text
+				background: -webkit-linear-gradient(transparent, transparent), url(../images/feature-1-image-headline-bg.jpg) repeat;
+				background-size: cover
+				-webkit-background-clip: text
+				-webkit-text-fill-color: transparent
+
+
 .feature-2
-	color: $color-dark-brown
+	color: $color-kabul
 
 	.feature-image
 		.parallax-bg
 			@extend .clearfix
 			background-size: cover !important
-			background-color: $color-dark-brown
+			background-color: $color-kabul
 			@include background-image-retina('feature-bg-2', 'jpg', 800px, 400px)
 			background-position: center
 			top: -300px
@@ -239,6 +244,38 @@ header
 			@media screen and (min-width: $screen-sm)
 				-webkit-background-size: 1200px 600px;
 				top: 0
+
+		.feature-image-headline
+			.feature-image-headline-text
+				// webkit browsers get the textured text
+				background: -webkit-linear-gradient(transparent, transparent), url(../images/feature-2-image-headline-bg.jpg) repeat;
+				background-size: cover
+				-webkit-background-clip: text
+				-webkit-text-fill-color: transparent
+
+.feature-3
+	color: $color-eden
+
+	.feature-image
+		.parallax-bg
+			@extend .clearfix
+			background-size: cover !important
+			background-color: $color-eden
+			@include background-image-retina('feature-bg-3', 'jpg', 800px, 400px)
+			background-position: center
+			top: -300px
+
+			@media screen and (min-width: $screen-sm)
+				-webkit-background-size: 1200px 600px;
+				top: 0
+
+		.feature-image-headline
+			.feature-image-headline-text
+				// webkit browsers get the textured text
+				background: -webkit-linear-gradient(transparent, transparent), url(../images/feature-3-image-headline-bg.jpg) repeat;
+				background-size: cover
+				-webkit-background-clip: text
+				-webkit-text-fill-color: transparent
 
 
 
