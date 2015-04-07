@@ -39,7 +39,6 @@ killParallax = () ->
 	skrollr.init().destroy()
 	return
 
-
 setScrollParams = () ->
 	
 	$(".feature-1 .feature-image .parallax-bg").attr("data-50-top", "transform:translate3d(0px, 0px, 0px)");
