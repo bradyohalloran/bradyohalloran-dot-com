@@ -5,10 +5,10 @@ html(lang="en")
 		header
 			div(class='full-width')
 				div(class='header-branding')
-					a(id='header-branding' href='#') 
-						span(id='header-branding-name').
+					a(class='header-branding' href='#') 
+						span(class='header-branding-name').
 							BRADY O'HALLORAN
-						span(id='header-branding-title').
+						span(class='header-branding-title').
 							CREATIVE/TECH GUY
 				nav(class='navbar navbar-default', role='navigation')
 					div(class='container-fluid')
@@ -30,7 +30,7 @@ html(lang="en")
 								li
 									a(href='#') CONTACT
 
-		div(class='feature feature-1')
+		div(id='feature-1' class='feature')
 			div(class='feature-image')
 				div(class='parallax-bg')
 				div(class='feature-image-headline')
@@ -54,7 +54,7 @@ html(lang="en")
 						
 						You should use your full name. I like that name, Robin.
 
-		div(class='feature feature-2')
+		div(id='feature-2' class='feature')
 			div(class='feature-image')
 				div(class='parallax-bg')
 				div(class='feature-image-headline') 
@@ -65,7 +65,7 @@ html(lang="en")
 			div(class='feature-copy')
 				div(class='feature-copy-inner')
 					:markdown
-						#In that time I worked on dozens of projects for major international clients as a <div id='text-roller'></div>
+						#In that time I worked on dozens of projects for major international clients as a <div class='text-roller'></div>
 
 						Over fifteen years I saw Amnesia grow from a small team of about a dozen, into what it is today as Razorfish Australia. Though I’ve been at ostensibly the same company over that period, my role has constantly changed as the projects got bigger, crazier and more ambitious.
 
@@ -109,7 +109,7 @@ html(lang="en")
 
 						For an example of how I like to build things, check out the [Github repo of this site](https://github.com/bradyohalloran/bradyohalloran-dot-com).
 
-		div(class='feature feature-3')
+		div(id='feature-3' class='feature')
 			div(class='feature-image')
 				div(class='parallax-bg')
 				div(class='feature-image-headline') 
@@ -134,37 +134,117 @@ html(lang="en")
 						
 						You should use your full name. I like that name, Robin.
 
-			div(class='work-example work-example-1 feature-copy-inner')
+			div(class='feature-copy work-example work-example-1')
+				div(class='parallax-bg')
 				div(class='feature-copy-inner')
 					:markdown
-						##Qantas You Interactive Billboard
+						#Qantas You Interactive Billboard
+
+						![](images/work-qantas-you-1.jpg)
+
+						You know what you said about the structures becoming shackles. You were right and I can't take it, the injustice. I mean, no one ever's gonna know who saved the entire city.
+						
+						It means you're hatred, and it also means losing someone, who I've cared for since I first heard his cries echoing through this house. But it might also mean saving your life. And that is more important.
+
+					div(class='work-example-column work-example-column-left')
+						:markdown
+							![](images/work-qantas-you-2.jpg)
+
+							![](images/work-qantas-you-3.jpg)
+
+					div(class='work-example-column work-example-column-right')
+						:markdown
+							There you are! There is nothing to fear but fear itself!
+						
+							Do I really look like a guy with a plan?
+						
+							But a man who doesn't care about the world doesn't spend half his fortune on a plan to save it. And isn't so wounded when it fails that he goes into hiding.
+						
+							You should use your full name. I like that name, Robin.
+
+
+
+			div(class='feature-copy work-example work-example-2')
+				div(class='parallax-bg')
+				div(class='feature-copy-inner')
+					:markdown
+						#Samsung Stadium: Sochi Winter Olympics
+
+						![](images/work-samsung-stadium-1.jpg)
 
 						There you are! There is nothing to fear but fear itself!
 					
 						Do I really look like a guy with a plan?
 
+						There you are! There is nothing to fear but fear itself!
+						
+						Do I really look like a guy with a plan?
+					
+						But a man who doesn't care about the world doesn't spend half his fortune on a plan to save it. And isn't so wounded when it fails that he goes into hiding.
+					
+						You should use your full name. I like that name, Robin.
+
+			div(class='feature-copy work-example work-example-3')
+				div(class='parallax-bg')
+				div(class='feature-copy-inner')
+					:markdown
+						#Samsung Paragon In-store Display
+
+						![](images/work-samsung-paragon-1.jpg)
+
+						There you are! There is nothing to fear but fear itself!
+					
+						Do I really look like a guy with a plan?
+
+						There you are! There is nothing to fear but fear itself!
+						
+						Do I really look like a guy with a plan?
+					
+						But a man who doesn't care about the world doesn't spend half his fortune on a plan to save it. And isn't so wounded when it fails that he goes into hiding.
+					
+						You should use your full name. I like that name, Robin.
+
 					div(class='work-example-column work-example-column-left')
 						:markdown
-							![](http://placehold.it/300x180)
-
-							![](http://placehold.it/300x180)
+							![](images/work-samsung-paragon-2.jpg)
 
 					div(class='work-example-column work-example-column-right')
 						:markdown
-							You know what you said about the structures becoming shackles. You were right and I can't take it, the injustice. I mean, no one ever's gonna know who saved the entire city.
-					
-							It means you're hatred, and it also means losing someone, who I've cared for since I first heard his cries echoing through this house. But it might also mean saving your life. And that is more important.
-					
 							There you are! There is nothing to fear but fear itself!
-					
+						
 							Do I really look like a guy with a plan?
-							
+						
 							But a man who doesn't care about the world doesn't spend half his fortune on a plan to save it. And isn't so wounded when it fails that he goes into hiding.
-					
+						
 							You should use your full name. I like that name, Robin.
 
-					div(class='feature-copy-inner')
-						:markdown
+		div(id='feature-4' class='feature')
+			div(class='feature-image')
+				div(class='parallax-bg')
+				div(class='feature-image-headline') 
+					- var headline='Jeff Goldblum is my spirit animal.'
+					div(class='feature-image-headline-text') #{headline}
+					div(class='feature-image-headline-shadow') #{headline}
+
+			div(class='feature-copy')
+				div(class='feature-copy-inner')
+					:markdown
+						#"Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should."
+
+						You know what you said about the structures becoming shackles. You were right and I can't take it, the injustice. I mean, no one ever's gonna know who saved the entire city.
+						
+						It means you're hatred, and it also means losing someone, who I've cared for since I first heard his cries echoing through this house. But it might also mean saving your life. And that is more important.
+						
+						There you are! There is nothing to fear but fear itself!
+						
+						Do I really look like a guy with a plan?
+						
+						But a man who doesn't care about the world doesn't spend half his fortune on a plan to save it. And isn't so wounded when it fails that he goes into hiding.
+						
+						You should use your full name. I like that name, Robin.
+
+
+
 						
 
 						

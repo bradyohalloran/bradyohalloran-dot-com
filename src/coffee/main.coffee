@@ -41,14 +41,17 @@ killParallax = () ->
 
 setScrollParams = () ->
 	
-	$(".feature-1 .feature-image .parallax-bg").attr("data-50-top", "transform:translate3d(0px, 0px, 0px)");
-	$(".feature-1 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 100px, 0px)");
+	$("#feature-1 .feature-image .parallax-bg").attr("data-50-top", "transform:translate3d(0px, 0px, 0px)");
+	$("#feature-1 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 100px, 0px)");
 
-	$(".feature-2 .feature-image .parallax-bg").attr("data-bottom-top", "transform:translate3d(0px, -200px, 0px)");
-	$(".feature-2 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 0px, 0px)");
+	$("#feature-2 .feature-image .parallax-bg").attr("data-bottom-top", "transform:translate3d(0px, -200px, 0px)");
+	$("#feature-2 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 0px, 0px)");
 
-	$(".feature-3 .feature-image .parallax-bg").attr("data-bottom-top", "transform:translate3d(0px, -200px, 0px)");
-	$(".feature-3 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 0px, 0px)");
+	$("#feature-3 .feature-image .parallax-bg").attr("data-bottom-top", "transform:translate3d(0px, -200px, 0px)");
+	$("#feature-3 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 0px, 0px)");
+
+	$("#feature-4 .feature-image .parallax-bg").attr("data-bottom-top", "transform:translate3d(0px, -200px, 0px)");
+	$("#feature-4 .feature-image .parallax-bg").attr("data-top-bottom", "transform:translate3d(0px, 0px, 0px)");
 
 	return
 	
@@ -85,17 +88,17 @@ $(document).ready ->
 
 	jobTitles = ['Designer', 'Developer', 'Producer', 'Creative Lead', 'Technical Lead']
 
-	$('#text-roller').append("<div id='rolling-text-1' class='rolling-text'>"+jobTitles[0]+"</div><div id='rolling-text-2' class='rolling-text'></div>")
+	$('.text-roller').append("<div class='rolling-text rolling-text-1'>"+jobTitles[0]+"</div><div class='rolling-text rolling-text-2'></div>")
 
 	setInterval ->
-		$('#rolling-text-2').html(jobTitles[i++])
+		$('.rolling-text-2').html(jobTitles[i++])
 		if i >= jobTitles.length
 			i=0
-		$('#rolling-text-1').html(jobTitles[i])
+		$('.rolling-text-1').html(jobTitles[i])
 
-		$('#rolling-text-1').css("top", "-=40")
-		$('#rolling-text-1').animate({top: "0"}, 500)
+		$('.rolling-text-1').css("top", "-=40")
+		$('.rolling-text-1').animate({top: "0"}, 500)
 
-		$('#rolling-text-2').css("top", "0")
-		$('#rolling-text-2').animate({top: "40"}, 500)
+		$('.rolling-text-2').css("top", "0")
+		$('.rolling-text-2').animate({top: "40"}, 500)
 	, 2000

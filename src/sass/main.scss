@@ -1,0 +1,401 @@
+@import './lib/bootstrap-sass/assets/stylesheets/bootstrap';
+@import './lib/fontawesome/scss/font-awesome';
+@import 'retina-images';
+@import 'web-fonts';
+@import 'font-size';
+@import url(http://fonts.googleapis.com/css?family=PT+Serif);
+
+$color-firefly: #142b36;
+$color-firefly-faded: #4d6b73;
+$color-kabul: #615039;
+$color-eden: #145149;
+$color-atomic: #3f4d53;
+$color-headline-text-fallback: #ececec;
+
+$color-white: #fff;
+
+html {
+  background-color: $color-white;
+  font-size: 62.5%;
+}
+    
+body { 
+  font-family: 'PT Sans', sans-serif;
+}
+
+header {
+  background-color: $color-white;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.navbar {
+  @media screen and (min-width: $screen-sm) {
+    float: right;
+  }
+}
+
+.navbar-nav {
+  background-color: transparent;
+  border: 0;
+  height: inherit;
+
+  li {
+    @media screen and (max-width: $screen-sm) {
+      background-color: $color-white;
+    }
+  }
+
+}
+
+.navbar-default {
+  background-color: transparent;
+  border: 0;
+}
+
+.navbar-nav>li>a, 
+.navbar-default .navbar-text {
+  @include font-size(1.5);
+  color: $color-firefly;
+  font-weight: bold;
+  
+}
+
+.header-branding {
+  @include font-size(1.5);
+  color: $color-firefly;
+  float: left;
+  font-weight: bold;
+  line-height: 50px;
+  
+  span {
+    margin-left: 20px;
+  }
+
+  .header-branding-title {
+    color: $color-firefly-faded;
+    @media screen and (max-width: $screen-xs) {
+      display: none;
+    }
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.feature-image {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  
+  @media screen and (min-width: $screen-sm) {
+    height: 400px;
+  }
+}
+
+.feature-image-headline {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.feature-image-headline-text {
+  @include font-size(4);
+  position: relative;
+  top: 0;
+  width: 100%;
+  color: $color-headline-text-fallback;
+  font-family:"Phosphate Pro Solid", sans-serif;
+  font-weight:normal;
+  font-style:normal;
+  line-height: 5rem;
+
+  @media screen and (min-width: $screen-sm) {
+    @include font-size(7);
+    line-height: 8.5rem;
+  }
+}
+
+.feature-image-headline-shadow {
+  @extend .feature-image-headline-text;
+  z-index: -100;
+  position: absolute;
+  top: 0;
+  background: none;
+  text-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+
+
+
+.parallax-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 0;
+}
+
+h1 {
+  font-family:"Phosphate Pro Solid", sans-serif;
+  text-align: center;
+  @include font-size(3);
+  margin: 30px 0;
+
+  @media screen and (min-width: $screen-sm) {
+    @include font-size(3.6);
+  }
+}
+
+
+
+.text-roller {
+  white-space: nowrap;
+  display: block;
+  position: relative;
+  top: 0;
+  height: 35px;
+  overflow: hidden;
+
+  @media screen and (min-width: $screen-sm) {
+    height: 40px;
+  }
+}
+
+.rolling-text {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+h2 {
+  @extend h1;
+  @include font-size(2.8);
+  text-align: left;
+  margin-top: 50px;
+}
+    
+
+.feature-copy {
+  @extend .clearfix;
+  background: $color-white;
+  padding: 0 0 50px 0;
+}
+
+.feature-copy-inner {
+  margin: 0 auto 0 auto;
+  width: 320px;
+
+  @media screen and (min-width: $screen-xs) {
+    width: 450px;
+  }
+  
+  @media screen and (min-width: $screen-sm) {
+      width: 700px;
+      padding: 0 20px;
+  }
+
+  p, li {
+    font-family: 'PT Serif', serif;
+    @include font-size(1.8);
+  }
+
+  p {
+    line-height: 2.4rem;
+    margin: 0 0 20px 0;
+    font-weight: 300;
+  }
+
+  a, a:visited {
+    color: inherit;
+    text-decoration: underline;
+  }
+      
+  ul {
+    @extend .clearfix;
+    margin: 0 0 20px 0;
+  }
+      
+  li {
+    @extend .col-sm-6;
+    list-style-type: none;
+    font-family: 'PT Serif', serif;
+    @include font-size(1.8);
+
+    &:before {
+      @extend .fa;
+      content: "\f061";
+      margin-right: 10px;
+      color: rgba(97,80,57,0.5);
+    }
+  }
+}
+
+// FEATURES
+
+#feature-1 {
+  color: $color-firefly;
+  margin-top: 50px;
+
+  .feature-image {
+    .parallax-bg {
+      @extend .clearfix;
+      height: 300px;
+      background-color: $color-firefly;
+      @include background-image-retina('feature-bg-1', 'jpg', 450px, 300px);
+      
+      @media screen and (min-width: $screen-sm) {
+        height: 400px;
+        -webkit-background-size: 600px 400px;
+        top: 0;
+      }
+    }
+  }
+
+  .feature-image-headline {
+    .feature-image-headline-text {
+      // webkit browsers get the textured text
+      background: -webkit-linear-gradient(transparent, transparent), url(../images/feature-1-image-headline-bg.jpg) repeat;
+      background-size: cover;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+
+
+#feature-2 {
+  color: $color-kabul;
+
+  .feature-image {
+    .parallax-bg {
+      @extend .clearfix;
+      background-color: $color-kabul;
+      @include background-image-retina('feature-bg-2', 'jpg', 800px, 400px);
+      background-size: cover !important;
+      background-position: center;
+      top: -300px;
+
+      @media screen and (min-width: $screen-sm) {
+        -webkit-background-size: 1200px 600px;
+        top: 0;
+      }
+    }
+
+    .feature-image-headline {
+      .feature-image-headline-text {
+        // webkit browsers get the textured text
+        background: -webkit-linear-gradient(transparent, transparent), url(../images/feature-2-image-headline-bg.jpg) repeat;
+        background-size: cover;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
+
+
+
+
+
+#feature-3 {
+  color: $color-eden;
+
+  .feature-image {
+    .parallax-bg {
+      @extend .clearfix;
+      background-color: $color-eden;
+      @include background-image-retina('feature-bg-3', 'jpg', 800px, 400px);
+      background-size: cover !important;
+      background-position: center;
+      top: -300px;
+
+      @media screen and (min-width: $screen-sm) {
+        -webkit-background-size: 1200px 600px;
+        top: 0;
+      }
+    }
+  }
+
+  .feature-image-headline {
+    .feature-image-headline-text {
+      // webkit browsers get the textured text
+      background: -webkit-linear-gradient(transparent, transparent), url(../images/feature-4-image-headline-bg.jpg) repeat;
+      background-size: cover;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+
+
+#feature-4 {
+  color: $color-atomic;
+
+  .feature-image {
+    .parallax-bg {
+      @extend .clearfix;
+      background-color: $color-atomic;
+      @include background-image-retina('feature-bg-4', 'jpg', 800px, 400px);
+      background-size: cover !important;
+      background-position: center;
+      top: -300px;
+
+      @media screen and (min-width: $screen-sm) {
+        -webkit-background-size: 1200px 600px;
+        top: 0;
+      }
+
+    }
+  }
+
+  
+
+  .feature-image-headline {
+    .feature-image-headline-text {
+      // webkit browsers get the textured text
+      background: -webkit-linear-gradient(transparent, transparent), url(../images/feature-3-image-headline-bg.jpg) repeat;
+      background-size: cover;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.work-example {
+  @extend .clearfix;
+  position: relative;
+  overflow: hidden;
+
+
+  @media screen and (min-width: $screen-sm) {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.work-example-column {
+  @extend .col-sm-6;
+  padding-left: 0;
+}
+

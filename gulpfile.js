@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var scsslint = require('gulp-scss-lint');
 var sourcemaps = require('gulp-sourcemaps');
 var jslint = require('gulp-jslint');
 var uglify = require('gulp-uglify');
@@ -24,9 +25,9 @@ gulp.task('default', ['connect', 'watch']);
 // BUILD SCRIPTS
 
 gulp.task('build-css', function() {
-	return gulp.src('src/sass/main.sass')
+	return gulp.src('src/sass/main.scss')
 		.pipe(plumber())
-		.pipe(sass({indentedSyntax: true}))
+		.pipe(sass({indentedSyntax: false, errLogToConsole: true}))
 		.pipe(plumber())
 		.pipe(uncss({
 			html: ['build/*.html'],
@@ -128,7 +129,7 @@ gulp.task('full-build', function(callback) {
 })
 
 gulp.task('build', function(callback) {
-	runSequence(['build-js', 'build-libs', 'build-fonts'], 'build-html', 'build-css', callback);
+	runSequence(['build-js', 'build-libs', 'build-fonts', 'build-images-jpg'], 'build-html', 'build-css', callback);
 })
 
 
