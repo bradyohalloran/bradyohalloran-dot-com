@@ -32,7 +32,7 @@ checkParallax = () ->
   
 
 setParallax = () ->
-	s = skrollr.init smoothScrolling: false
+	s = skrollr.init smoothScrolling: false, forceHeight: false
 	return
 
 killParallax = () ->
@@ -86,7 +86,7 @@ $(document).ready ->
 
 	i=0
 
-	jobTitles = ['Designer', 'Developer', 'Producer', 'Creative Lead', 'Technical Lead']
+	jobTitles = ['Designer', 'Developer', 'Producer', 'Creative Lead', 'Technical Lead', '3D Modeller', 'Video Editor']
 
 	$('.text-roller').append("<div class='rolling-text rolling-text-1'>"+jobTitles[0]+"</div><div class='rolling-text rolling-text-2'></div>")
 
