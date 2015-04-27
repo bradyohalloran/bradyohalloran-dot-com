@@ -1,8 +1,3 @@
-###
-do ->
-	alert "Hello!!!"
-###
-
 windowWidth=0
 
 init = () ->
@@ -99,11 +94,7 @@ $(document).ready ->
 				headerShowing = true
 		lst = st
 
-
-			
 		return
-
-
 
 	# Set up the rolling text with the job titles
 

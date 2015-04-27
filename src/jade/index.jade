@@ -1,6 +1,7 @@
 doctype html
-html(lang="en")
+html(lang="en" class="wf-loading")
 	include head.jade
+	include scripts.jade
 	body
 		header
 			div(class='full-width')
@@ -48,14 +49,6 @@ html(lang="en")
 
 						I'm an avid consumer of movies, TV and books, and a life-long gamer. I love to build cool things and always learn new things along the way.
 
-
-
-
-
-
-
-
-
 		div(id='feature-2' class='feature')
 			div(class='feature-image')
 				div(class='parallax-bg')
@@ -69,7 +62,7 @@ html(lang="en")
 					:markdown
 						#In that time I worked on dozens of projects for major international clients as a <div class='text-roller'></div>
 
-						Over fifteen years I saw Amnesia grow from a small team of about a dozen, into what it is today as Razorfish Australia. Though I’ve been at ostensibly the same company over that period, my role has constantly changed as the projects got bigger, crazier and more ambitious.
+						Over fifteen years I saw Amnesia grow from a small team of about a dozen, into what it is today as Razorfish Australia. Though I've been at ostensibly the same company over that period, my role has constantly changed as the projects got bigger, crazier and more ambitious.
 
 						Though initially starting as a Senior Designer, I quickly moved into other roles including:					
 
@@ -109,7 +102,7 @@ html(lang="en")
 						* Objective-C
 						* Ubuntu
 
-						I’m always picking up new technologies, practices and ideas. My M.O. is to find something cool, play around with it, learn it and do it - often all at the same time.
+						I'm always picking up new technologies, practices and ideas. My M.O. is to find something cool, play around with it, learn it and do it - often all at the same time.
 
 						For an example of how I like to build things, check out the [Github repo of this site](https://github.com/bradyohalloran/bradyohalloran-dot-com).
 
@@ -124,14 +117,13 @@ html(lang="en")
 			div(class='feature-copy')
 				div(class='feature-copy-inner')
 					:markdown
-						#Attack ships on fire off the shoulder of Orion. I watched c-beams glitter in the dark near the Tannhäuser Gate. 
+						#Attack ships on fire off the shoulder of Orion. I watched c-beams glitter in the dark near the Tannh&auml;user Gate. 
 
 						OK, these I haven't actually seen these things, but due to the shifting nature of the web, most of the projects I have worked are no longer live and have been lost [like tears in rain](https://www.youtube.com/watch?v=NoAzpa1x7jU).
 
 						Despite my focus being front and back-end development, the following three projects are some of the most interesting and challenging that I've worked on. All of them required me to step outside my comfort area and learn quickly.
 
 			div(class='feature-copy work-example work-example-1')
-				div(class='parallax-bg')
 				div(class='feature-copy-inner')
 					:markdown
 						#Qantas You Interactive Billboard
@@ -184,17 +176,9 @@ html(lang="en")
 
 						![](images/work-samsung-paragon-1.jpg)
 
-						There you are! There is nothing to fear but fear itself!
-					
-						Do I really look like a guy with a plan?
+						When Samsung wanted to make their in-store presence stand out among the competition, they asked Razorfish to build an eye-catching, engaging and above-all, useful interactive display.
 
-						There you are! There is nothing to fear but fear itself!
-						
-						Do I really look like a guy with a plan?
-					
-						But a man who doesn't care about the world doesn't spend half his fortune on a plan to save it. And isn't so wounded when it fails that he goes into hiding.
-					
-						You should use your full name. I like that name, Robin.
+						We designed and developed the Paragon display &mdash; an interative touch-screen experience that can work with up to eight full-HD displays from just one controller PC.
 
 					div(class='work-example-column work-example-column-left')
 						:markdown
@@ -202,13 +186,10 @@ html(lang="en")
 
 					div(class='work-example-column work-example-column-right')
 						:markdown
-							There you are! There is nothing to fear but fear itself!
-						
-							Do I really look like a guy with a plan?
-						
-							But a man who doesn't care about the world doesn't spend half his fortune on a plan to save it. And isn't so wounded when it fails that he goes into hiding.
-						
-							You should use your full name. I like that name, Robin.
+							Built entirely with open-source software, Paragon accepted input from up to eight Samsung Galaxy tablets, allowing users to view demonstration videos, browse the Samsung range and request more information to be sent to their email address or device.
+
+					:markdown
+						I was brought into the project, mid-way through development as a technical project manager. My responsibilities were the finalising of the hardware prototype configuration, liasing with the installation suppliers and project managing the final development, training and roll-out.
 
 		div(id='feature-4' class='feature')
 			div(class='feature-image')
@@ -223,26 +204,24 @@ html(lang="en")
 					:markdown
 						#"Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should."
 
-						You know what you said about the structures becoming shackles. You were right and I can't take it, the injustice. I mean, no one ever's gonna know who saved the entire city.
-						
-						It means you're hatred, and it also means losing someone, who I've cared for since I first heard his cries echoing through this house. But it might also mean saving your life. And that is more important.
-						
-						There you are! There is nothing to fear but fear itself!
-						
-						Do I really look like a guy with a plan?
-						
-						But a man who doesn't care about the world doesn't spend half his fortune on a plan to save it. And isn't so wounded when it fails that he goes into hiding.
-						
-						You should use your full name. I like that name, Robin.
+						That quote, has always been my favourite line from Jurassic Park<sup>*</sup> and in the course of my career I've found myself quoting it time and time again when seeing the bizarre solutions some agencies provide their clients. It frustrates me when I see projects being delivered in order to demonstrate a capability, win an award or flex a creative muscle, despite being completely wrong for the client.
 
+						It's always fun to work for a big brand, but the thing that excites me the most is building something SMART in the cleanest, most efficient way possible. It doesn't matter who the client is &mdash; if it answers the brief and it's built well, I'm proud of it. This is what drives me, along with the desire to constantly learn and improve.
 
+						I want to build smart, clean, beautiful sites and applications. I want to do what's right by the client and the team I'm working with.
 
+						If you think this sounds like someone you'd want to work with, I'm open to any suggestion &mdash; freelance, contract, part or full-time.
 
+						Feel free to email me at *bradyohalloran at gmail dot com*. I'm always happy to have a coffee and a chat.
+
+					div(class='feature-text-footnote')
+						:markdown
+							*Except, perhaps for "Clever girl."
 
 		footer
 			div(class='copyright-line')
 				:markdown
-					* <a href="https://au.linkedin.com/in/bradyohallora"><i class="fa fa-linkedin-square"></i></a>
+					* <a href="https://au.linkedin.com/in/bradyohalloran"><i class="fa fa-linkedin-square"></i></a>
 					* <a href="https://twitter.com/bradyohalloran"><i class="fa fa-twitter"></a></i>
 					* <a href="https://instagram.com/bradyohalloran/"><i class="fa fa-instagram"></a></i>
 					* <a href="https://github.com/bradyohalloran/"><i class="fa fa-github"></a></i>
@@ -250,38 +229,3 @@ html(lang="en")
 					Site ingredients: HTML5, CoffeeScript, SASS, Jade and Gulp
 
 					Unless shamelessly stolen from a film, all content is &copy; Copyright 2015 Brady O'Halloran
-
-
-						
-
-						
-
-				
-						
-						
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		include scripts.jade
-
-
-
-
-
-
-		

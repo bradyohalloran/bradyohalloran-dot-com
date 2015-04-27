@@ -7,6 +7,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var slim = require('gulp-slim');
 var minifyCSS = require('gulp-minify-css');
+var minifyHTML = require('gulp-minify-html');
 var connect = require('gulp-connect');
 var copy = require('gulp-copy');
 var del = require('del');
@@ -42,7 +43,7 @@ gulp.task('build-css', function() {
                 /[#.]rolling-text-*[A-Za-z-0-9]*/,
            ]
 		}))
-		.pipe(minifyCSS({keepBreaks:true}))
+		.pipe(minifyCSS({keepBreaks:false}))
 		.pipe(gulp.dest('./build/css'))
 		.pipe(connect.reload())
 });
@@ -61,6 +62,7 @@ gulp.task('build-js', function() {
 		.pipe(plumber())
 		.pipe(coffee({bare:true}))
 		.pipe(sourcemaps.write())
+		.pipe(uglify({mangle:false}))
 		.pipe(gulp.dest('build/js'))
 
 });
@@ -74,7 +76,7 @@ gulp.task('build-libs', function() {
 		'lib/jquery.debouncedresize/js/jquery.debouncedresize.js'
 		])
 	.pipe(concat('libs.js'))
-	//.pipe(uglify({mangle:false}))
+	.pipe(uglify({mangle:false}))
 	.pipe(gulp.dest('build/js'))
 })
 
@@ -102,6 +104,7 @@ gulp.task('build-html', function() {
 		.pipe(jade({
 			pretty: true
 		}))
+		.pipe(minifyHTML())
 		.pipe(gulp.dest("build/"))
 		.pipe(connect.reload())
 });

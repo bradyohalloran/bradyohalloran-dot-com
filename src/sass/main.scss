@@ -59,6 +59,11 @@ a {
 
 }
 
+.wf-loading .feature-image-headline,
+.wf-loading .feature-copy-inner h1 {
+  visibility: hidden;
+}
+
 .navbar {
   @media screen and (min-width: $screen-sm) {
     float: right;
@@ -221,7 +226,7 @@ h2 {
 
 .feature-copy-inner {
   margin: 0 auto 0 auto;
-  width: 320px;
+  width: 300px;
 
   @media screen and (min-width: $screen-xs) {
     width: 450px;
@@ -268,6 +273,10 @@ h2 {
   }
 }
 
+.feature-text-footnote p {
+  font-size: 1rem;
+}
+
 // FEATURES
 
 #feature-1 {
@@ -284,7 +293,9 @@ h2 {
       
       @media screen and (min-width: $screen-sm) {
         height: 400px;
+        background-size: auto;
         -webkit-background-size: 600px 400px;
+
       }
     }
   }
@@ -358,6 +369,7 @@ h2 {
   
   @media screen and (min-width: $screen-sm) {
     margin-bottom: 200px;
+    pointer-events: none;
   }
 
   .feature-image {
