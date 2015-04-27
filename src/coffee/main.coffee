@@ -8,6 +8,7 @@ windowWidth=0
 init = () ->
 	setScrollParams()
 	checkParallax()
+	setNav()
 
 	$(window).on("debouncedresize", (event)->
 		resized()
@@ -55,6 +56,29 @@ setScrollParams = () ->
 
 	return
 	
+setNav = () ->
+
+	$("#nav-about").click ->
+		$("html,body").animate {scrollTop: $("#feature-1").offset().top}
+
+	$("#nav-experience").click ->
+		$("html,body").animate {scrollTop: $("#feature-2").offset().top}
+
+	$("#nav-work").click ->
+		$("html,body").animate {scrollTop: $("#feature-3").offset().top}
+
+	$("#nav-contact").click ->
+		$("html,body").animate {scrollTop: $("#feature-4").offset().top}
+		
+showNav = () ->
+	$('header').stop(true, false)
+	$('header').animate({top: "0"}, 250)
+
+hideNav = () ->
+	$('header').animate({top: "-50"}, 250)
+	headerShowing = false
+
+
 $(document).ready ->
 
 	init()
@@ -67,12 +91,11 @@ $(document).ready ->
 		
 		if st > lst and st > 200
 			if headerShowing
-				$('header').animate({top: "-50"}, 250)
+				hideNav()
 				headerShowing = false
 		else
 			if !headerShowing
-				$('header').stop(true, false)
-				$('header').animate({top: "0"}, 250)
+				showNav()
 				headerShowing = true
 		lst = st
 

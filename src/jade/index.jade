@@ -22,13 +22,13 @@ html(lang="en")
 						div(class='collapse navbar-collapse' id='header-menu')
 							ul(class='nav navbar-nav')
 								li
-									a(href='#') ABOUT ME
+									a(href='#' id='nav-about' data-toggle='collapse' data-target='#header-menu') ABOUT ME
 								li
-									a(href='#') EXPERIENCE
+									a(href='#' id='nav-experience' data-toggle='collapse' data-target='#header-menu') EXPERIENCE
 								li
-									a(href='#') WORK
+									a(href='#' id='nav-work' data-toggle='collapse' data-target='#header-menu') WORK
 								li
-									a(href='#') CONTACT
+									a(href='#' id='nav-contact' data-toggle='collapse' data-target='#header-menu') CONTACT
 
 		div(id='feature-1' class='feature')
 			div(class='feature-image')
@@ -42,11 +42,11 @@ html(lang="en")
 					:markdown
 						#I like to make cool things with computers and occasionally talk about myself in the third-person.
 						
-						Ever since getting my first PC at age 11, I've been designing and coding in some form. In that time I've designed a built countless websites, CD-ROMs and online games for a huge variety of clients, large and small.
+						Ever since getting my first PC at age 11, I've been designing and coding in some way. In that time I've designed and built countless websites, CD-ROMs and online games for a huge variety of clients, large and small.
 
-						My primary focus is client and server side development for the web, but as you can see below, I often branch out into other areas of digital. 
+						My primary focus is client and server-side development for the web, but as you can see below, I often branch out into other areas of digital. 
 
-						I'm an avid consumer of movies, TV and books and a life-long gamer. I love to build cool things and always learn new things along the way.
+						I'm an avid consumer of movies, TV and books, and a life-long gamer. I love to build cool things and always learn new things along the way.
 
 
 
@@ -76,7 +76,7 @@ html(lang="en")
 						* Design
 						* Motion-design
 						* Video editing
-						* 3D modeling
+						* 3D modelling
 						* Front-end development
 						* Back-end development
 						* Flash development
@@ -109,7 +109,7 @@ html(lang="en")
 						* Objective-C
 						* Ubuntu
 
-						I’m always picking up new technologies, practices and ideas. My MO is to find something cool, play around with it, learn it and do it - often all at the same time.
+						I’m always picking up new technologies, practices and ideas. My M.O. is to find something cool, play around with it, learn it and do it - often all at the same time.
 
 						For an example of how I like to build things, check out the [Github repo of this site](https://github.com/bradyohalloran/bradyohalloran-dot-com).
 
@@ -170,7 +170,7 @@ html(lang="en")
 
 						This was my first start-to-finish iOS app, built in just three weeks (with zero overtime). The app pulled in news stories, conducted polls and gave access to all of Roy and HGs video content throughout the Games. In addition to the development, I also worked closely with the designers to ensure that the app adhered to Apple design guidelines.
 
-						I was also responsible for building out the video production pipeline where video files were uploaded directly by Channel Ten, processed by Amazon Elastic Transcoder into multiple adaptive bitrate video stream files and then deposited back into our Cloud hosting for delivery into the apps. 
+						I was also responsible for building the video production pipeline where video files were uploaded directly by Channel Ten, processed by Amazon Elastic Transcoder into multiple adaptive bitrate video stream files and then deposited back into our Cloud hosting for delivery into the apps. 
 
 						In order to facilitate remote management of the transcoding process, I produced a set of command line tools in Ruby that allowed us to remotely start the rendering process and monitor the rendering progress. These tools saved us hours of manual rendering, downloading and uploading.
 
@@ -240,7 +240,16 @@ html(lang="en")
 
 
 		footer
-			p hello
+			div(class='copyright-line')
+				:markdown
+					* <a href="https://au.linkedin.com/in/bradyohallora"><i class="fa fa-linkedin-square"></i></a>
+					* <a href="https://twitter.com/bradyohalloran"><i class="fa fa-twitter"></a></i>
+					* <a href="https://instagram.com/bradyohalloran/"><i class="fa fa-instagram"></a></i>
+					* <a href="https://github.com/bradyohalloran/"><i class="fa fa-github"></a></i>
+
+					Site ingredients: HTML5, CoffeeScript, SASS, Jade and Gulp
+
+					Unless shamelessly stolen from a film, all content is &copy; Copyright 2015 Brady O'Halloran
 
 
 						
