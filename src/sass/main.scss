@@ -410,16 +410,39 @@ h2 {
 
 .work-example-column {
   @extend .col-sm-6;
-  padding-left: 0;
+  padding: 0;
+}
+
+.work-example-column-left {
+  @extend .col-sm-6;
+  
+  @media screen and (min-width: $screen-sm) {
+    padding-right: 15px;
+  }
 }
 
 .work-example-column-right {
   @extend .col-sm-6;
+  
+  @media screen and (min-width: $screen-sm) {
+    padding-left: 15px;
+  }
+}
+
+.content-feature-image {
+  width: 360px;
+  height: 202px;
+
+  @media screen and (min-width: $screen-xs) {
+    width: 450px;
+    height: 253px;
+  }
 
   @media screen and (min-width: $screen-sm) {
-    padding-left: 10px;
+    width: 660px;
+    height: 371px;
   }
-  
+
 }
 
 .copyright-line {

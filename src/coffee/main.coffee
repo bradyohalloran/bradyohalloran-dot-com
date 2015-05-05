@@ -4,13 +4,33 @@ init = () ->
 	setScrollParams()
 	checkParallax()
 	setNav()
+	handleDeepLinks()
 
 	$(window).on("debouncedresize", (event)->
 		resized()
 	 )
 
+
+
 	return
 
+handleDeepLinks = () ->
+	sectionIdArray = window.location.href.split("/").filter(Boolean)
+	sectionId = sectionIdArray[sectionIdArray.length-1]
+
+	switch sectionId
+		when "about"
+			window.scrollTo 0, 0 
+		when "experience"
+			window.scrollTo 0, $("#feature-2").offset().top
+		when "work"
+			window.scrollTo 0, $("#feature-3").offset().top
+		when "contact"
+			window.scrollTo 0, $("#feature-4").offset().top
+	
+
+
+	return
 
 resized = () ->
 	if $(window).width() != windowWidth
@@ -54,15 +74,19 @@ setScrollParams = () ->
 setNav = () ->
 
 	$("#nav-about").click ->
-		$("html,body").animate {scrollTop: $("#feature-1").offset().top}
+		history.pushState(null, null, "/about");
+		$("html,body").animate {scrollTop: 0}
 
 	$("#nav-experience").click ->
+		history.pushState(null, null, "/experience");
 		$("html,body").animate {scrollTop: $("#feature-2").offset().top}
 
 	$("#nav-work").click ->
+		history.pushState(null, null, "/work");
 		$("html,body").animate {scrollTop: $("#feature-3").offset().top}
 
 	$("#nav-contact").click ->
+		history.pushState(null, null, "/contact");
 		$("html,body").animate {scrollTop: $("#feature-4").offset().top}
 		
 showNav = () ->
