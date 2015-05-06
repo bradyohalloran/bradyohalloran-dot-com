@@ -76,6 +76,8 @@ a {
   height: inherit;
 
   li {
+    cursor: pointer;
+
     @media screen and (max-width: $screen-sm) {
       background-color: $color-white;
     }

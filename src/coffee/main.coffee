@@ -1,5 +1,8 @@
 windowWidth=0
 
+exports = this
+exports.holdNav = false
+
 init = () ->
 	setScrollParams()
 	checkParallax()
@@ -9,8 +12,6 @@ init = () ->
 	$(window).on("debouncedresize", (event)->
 		resized()
 	 )
-
-
 
 	return
 
@@ -28,8 +29,6 @@ handleDeepLinks = () ->
 		when "contact"
 			window.scrollTo 0, $("#feature-4").offset().top
 	
-
-
 	return
 
 resized = () ->
@@ -72,22 +71,41 @@ setScrollParams = () ->
 	return
 	
 setNav = () ->
+	$("#nav-about").click -> navClick("about")
+	$("#nav-experience").click -> navClick("experience")
+	$("#nav-work").click -> navClick("work")
+	$("#nav-contact").click -> navClick("contact")
 
-	$("#nav-about").click ->
-		history.pushState(null, null, "/about");
-		$("html,body").animate {scrollTop: 0}
-
-	$("#nav-experience").click ->
-		history.pushState(null, null, "/experience");
-		$("html,body").animate {scrollTop: $("#feature-2").offset().top}
-
-	$("#nav-work").click ->
-		history.pushState(null, null, "/work");
-		$("html,body").animate {scrollTop: $("#feature-3").offset().top}
-
-	$("#nav-contact").click ->
-		history.pushState(null, null, "/contact");
-		$("html,body").animate {scrollTop: $("#feature-4").offset().top}
+navClick = (destinationSection) ->
+	switch destinationSection
+		when "about"
+			exports.holdNav = true
+			history.pushState(null, null, "/about");
+			$("html,body").animate {scrollTop: 0}, {complete: -> 
+				setTimeout ->
+					exports.holdNav = false
+				, 2000}
+		when "experience"
+			exports.holdNav = true
+			history.pushState(null, null, "/experience");
+			$("html,body").animate {scrollTop: $("#feature-2").offset().top}, {complete: -> 
+				setTimeout ->
+					exports.holdNav = false
+				, 2000}
+		when "work"
+			exports.holdNav = true
+			history.pushState(null, null, "/work");
+			$("html,body").animate {scrollTop: $("#feature-3").offset().top}, {complete: -> 
+				setTimeout ->
+					exports.holdNav = false
+				, 2000}
+		when "contact"
+			exports.holdNav = true
+			history.pushState(null, null, "/contact");
+			$("html,body").animate {scrollTop: $("#feature-4").offset().top}, {complete: -> 
+				setTimeout ->
+					exports.holdNav = false
+				, 2000}
 		
 showNav = () ->
 	$('header').stop(true, false)
@@ -107,8 +125,7 @@ $(document).ready ->
 	lst = 0
 	$(window).scroll (event)->
 		st = $(this).scrollTop()
-		
-		if st > lst and st > 200
+		if st > lst and st > 200 and not exports.holdNav
 			if headerShowing
 				hideNav()
 				headerShowing = false
