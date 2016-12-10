@@ -12,7 +12,7 @@ var connect = require('gulp-connect');
 var copy = require('gulp-copy');
 var del = require('del');
 var plumber = require('gulp-plumber');
-var jade = require('gulp-jade');
+var pug = require('gulp-pug');
 var coffee = require('gulp-coffee');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
@@ -49,7 +49,7 @@ gulp.task('build-css', function() {
 });
 
 gulp.task('build-fonts', function() {
-	return gulp.src(['lib/fontawesome/fonts/fontawesome-webfont.*'])
+	return gulp.src(['lib/fontawesome/fonts/fontawesome-webfont.*','assets/fonts/*.*'])
 		.pipe(copy('build/fonts/', {
 			prefix: 3
 		}))
@@ -69,10 +69,10 @@ gulp.task('build-js', function() {
 
 gulp.task('build-libs', function() {
 	return gulp.src([
-		'lib/modernizr/modernizr.js', 
+		'lib/modernizr/modernizr.js',
 		'lib/jquery/dist/jquery.min.js',
 		'lib/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-		'lib/skrollr/dist/skrollr.min.js',
+		'node_modules/skrollr/dist/skrollr.min.js',
 		'lib/jquery.debouncedresize/js/jquery.debouncedresize.js'
 		])
 	.pipe(concat('libs.js'))
@@ -99,9 +99,9 @@ gulp.task('build-images-jpg', function() {
 })
 
 gulp.task('build-html', function() {
-	return gulp.src('src/jade/index.jade')
+	return gulp.src('src/pug/index.pug')
 		.pipe(plumber())
-		.pipe(jade({
+		.pipe(pug({
 			pretty: true
 		}))
 		.pipe(minifyHTML())
@@ -134,9 +134,3 @@ gulp.task('full-build', function(callback) {
 gulp.task('build', function(callback) {
 	runSequence(['build-js', 'build-libs', 'build-fonts', 'build-images-jpg'], 'build-html', 'build-css', callback);
 })
-
-
-
-
-
-

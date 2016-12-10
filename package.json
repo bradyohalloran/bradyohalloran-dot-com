@@ -1,0 +1,56 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio site.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "del": "^1.1.1",
+    "font-awesome": "^4.7.0",
+    "fontawesome": "^4.7.0",
+    "gulp": "^3.8.11",
+    "gulp-coffee": "^2.3.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-connect": "^2.2.0",
+    "gulp-copy": "^0.0.2",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-jade": "^1.0.0",
+    "gulp-jslint": "^0.2.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-minify-html": "^1.0.2",
+    "gulp-plumber": "^1.0.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-retina-sprites": "^0.0.3",
+    "gulp-sass": "^2.3.2",
+    "gulp-scss-lint": "^0.1.11",
+    "gulp-slim": "^0.0.13",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-uglify": "^1.1.0",
+    "gulp-uncss": "^1.0.0",
+    "imagemin-mozjpeg": "^4.0.0",
+    "imagemin-pngquant": "^4.0.0",
+    "jstransformer-marked": "^1.0.2",
+    "lodash": "^3.5.0",
+    "marked": "^0.3.3",
+    "node-sass": "^3.13.0",
+    "pug": "^2.0.0-beta6",
+    "run-sequence": "^1.0.2",
+    "skrollr": "^0.6.26"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bradyohalloran@github.com/bradyohalloran/bradyohalloran-dot-com.git"
+  },
+  "author": "Brady O'Halloran",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/bradyohalloran/bradyohalloran-dot-com/issues"
+  },
+  "homepage": "https://github.com/bradyohalloran/bradyohalloran-dot-com"
+}
