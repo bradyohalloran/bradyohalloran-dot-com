@@ -31,7 +31,7 @@ gulp.task('build-css', function() {
 		.pipe(sass({indentedSyntax: false, errLogToConsole: true}))
 		.pipe(plumber())
 		.pipe(uncss({
-			html: ['build/*.html'],
+			html: ['public/*.html'],
 			ignore: [
                 ".fade",
                 ".fade.in",
@@ -44,13 +44,13 @@ gulp.task('build-css', function() {
            ]
 		}))
 		.pipe(minifyCSS({keepBreaks:false}))
-		.pipe(gulp.dest('./build/css'))
+		.pipe(gulp.dest('./public/css'))
 		.pipe(connect.reload())
 });
 
 gulp.task('build-fonts', function() {
 	return gulp.src(['lib/fontawesome/fonts/fontawesome-webfont.*','assets/fonts/*.*'])
-		.pipe(copy('build/fonts/', {
+		.pipe(copy('public/fonts/', {
 			prefix: 3
 		}))
 });
@@ -63,7 +63,7 @@ gulp.task('build-js', function() {
 		.pipe(coffee({bare:true}))
 		.pipe(sourcemaps.write())
 		.pipe(uglify({mangle:false}))
-		.pipe(gulp.dest('build/js'))
+		.pipe(gulp.dest('public/js'))
 
 });
 
@@ -77,7 +77,7 @@ gulp.task('build-libs', function() {
 		])
 	.pipe(concat('libs.js'))
 	.pipe(uglify({mangle:false}))
-	.pipe(gulp.dest('build/js'))
+	.pipe(gulp.dest('public/js'))
 })
 
 gulp.task('build-images-png', function() {
@@ -86,7 +86,7 @@ gulp.task('build-images-png', function() {
 			progressive: true,
 			use: [pngquant()]
 		}))
-		.pipe(gulp.dest('build/images/'));
+		.pipe(gulp.dest('public/images/'));
 })
 
 gulp.task('build-images-jpg', function() {
@@ -95,7 +95,7 @@ gulp.task('build-images-jpg', function() {
 			progressive: true,
 			use: [mozjpeg()]
 		}))
-		.pipe(gulp.dest('build/images/'));
+		.pipe(gulp.dest('public/images/'));
 })
 
 gulp.task('build-html', function() {
@@ -105,26 +105,26 @@ gulp.task('build-html', function() {
 			pretty: true
 		}))
 		.pipe(minifyHTML())
-		.pipe(gulp.dest("build/"))
+		.pipe(gulp.dest("public/"))
 		.pipe(connect.reload())
 });
 
 // UTILITY TASKS
 
 gulp.task('watch', function() {
-	gulp.watch(['./src/**/*.*'], ['build']);
+	gulp.watch(['./src/**/*.*'], ['public']);
 })
 
 gulp.task('connect', function() {
 	connect.server({
-		root: 'build',
+		root: 'public',
 		livereload: true
 	});
 })
 
 gulp.task('clean', function() {
 	console.log('Cleaning build folder...');
-	del('build/**/*.*');
+	del('public/**/*.*');
 })
 
 gulp.task('full-build', function(callback) {
